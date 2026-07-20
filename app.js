@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require('express')
 const sass = require('sass')
-const fs = require('fs')
 let path = require('path')
 let cheerio = require('cheerio')
 const contentful = require('contentful')
@@ -20,14 +19,13 @@ app.use('/static', express.static(path.join(__dirname,'/static')));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-const publicDir = path.join(__dirname, 'public')
-fs.mkdirSync(publicDir, { recursive: true })
-const { css } = sass.compile(path.join(__dirname, 'bootstrap/style.sass'), {
+// App Engine Standard's runtime filesystem is read-only outside /tmp, so the
+// compiled CSS is kept in memory and served directly rather than written to disk.
+const { css: compiledCss } = sass.compile(path.join(__dirname, 'bootstrap/style.sass'), {
     syntax: 'scss', // the file has a .sass extension but is written in SCSS syntax
     logger: sass.Logger.silent // silence Bootstrap's own deprecation warnings
 })
-fs.writeFileSync(path.join(publicDir, 'style.css'), css)
-app.use('/public', express.static(publicDir));
+app.get('/public/style.css', (req, res) => res.type('css').send(compiledCss));
 
 app.get('/', (req, res, next) => {
     client.getEntry('11CRuC0Q5OJb5a8vi4jsjX')
