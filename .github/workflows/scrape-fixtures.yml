@@ -1,4 +1,4 @@
-name: Scrape Fixtures
+name: Scrape Fixtures & Tables
 
 on:
   # Run once daily at 5am UTC
@@ -26,15 +26,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run scraper
+      - name: Run fixtures scraper
         run: npm run scrape
 
-      - name: Commit updated fixtures
+      - name: Run tables scraper
+        run: npm run scrape:tables
+
+      - name: Commit updated data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/fixtures.json
-          git diff --cached --quiet && echo "No changes." || git commit -m "chore: update fixtures"
+          git add data/fixtures.json data/tables.json
+          git diff --cached --quiet && echo "No changes." || git commit -m "chore: update fixtures & tables"
 
       - name: Push
         run: git diff HEAD~1 HEAD --quiet 2>/dev/null && echo "Nothing to push." || git push

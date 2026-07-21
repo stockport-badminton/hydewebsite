@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express')
 const sass = require('sass')
 let path = require('path')
-let cheerio = require('cheerio')
 const contentful = require('contentful')
 let { BLOCKS } = require('@contentful/rich-text-types') 
 let { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
@@ -122,26 +121,38 @@ app.get('/history/:season', (req, res, next) => {
 
 
 
-const https = require('https');
 const { computeSeason, seasonLabel } = require('./lib/season');
 
-// Fixtures are scraped out-of-band by scripts/scrape-fixtures.mjs (run on a
-// schedule via GitHub Actions) and committed to data/fixtures.json. The app
-// just reads that file's raw GitHub URL instead of live-scraping the league
-// sites on every request — keeps the request path immune to the leagues'
-// sites changing markup or returning something unparseable.
+// Fixtures and tables are scraped out-of-band by scripts/scrape-fixtures.mjs
+// and scripts/scrape-tables.mjs (run on a schedule via GitHub Actions) and
+// committed to data/*.json. The app just reads those files' raw GitHub URLs
+// instead of live-scraping the league sites on every request — keeps the
+// request path immune to the leagues' sites changing markup or returning
+// something unparseable.
 const FIXTURES_JSON_URL = process.env.FIXTURES_JSON_URL || 'https://raw.githubusercontent.com/stockport-badminton/hydewebsite/main/data/fixtures.json';
-const FIXTURES_CACHE_TTL_MS = 10 * 60 * 1000;
+const TABLES_JSON_URL = process.env.TABLES_JSON_URL || 'https://raw.githubusercontent.com/stockport-badminton/hydewebsite/main/data/tables.json';
+const SCRAPED_DATA_CACHE_TTL_MS = 10 * 60 * 1000;
 let fixturesCache = { fixtures: null, fetchedAt: 0 };
+let tablesCache = { divisions: null, fetchedAt: 0 };
 
 async function getFixtures() {
-  const isFresh = fixturesCache.fixtures && (Date.now() - fixturesCache.fetchedAt) < FIXTURES_CACHE_TTL_MS;
+  const isFresh = fixturesCache.fixtures && (Date.now() - fixturesCache.fetchedAt) < SCRAPED_DATA_CACHE_TTL_MS;
   if (isFresh) return fixturesCache.fixtures;
   const response = await fetch(FIXTURES_JSON_URL);
   if (!response.ok) throw new Error(`Fixtures fetch failed: ${response.status}`);
   const { fixtures } = await response.json();
   fixturesCache = { fixtures, fetchedAt: Date.now() };
   return fixtures;
+}
+
+async function getTables() {
+  const isFresh = tablesCache.divisions && (Date.now() - tablesCache.fetchedAt) < SCRAPED_DATA_CACHE_TTL_MS;
+  if (isFresh) return tablesCache.divisions;
+  const response = await fetch(TABLES_JSON_URL);
+  if (!response.ok) throw new Error(`Tables fetch failed: ${response.status}`);
+  const { divisions } = await response.json();
+  tablesCache = { divisions, fetchedAt: Date.now() };
+  return divisions;
 }
 
 const dayNames = Array.from({ length: 7 }, (_, i) => new Date(0, 0, i).toLocaleString('en-US', { weekday: 'short' }));
@@ -163,112 +174,21 @@ app.get('/gallery', (req, res, next) => {
 
 app.get('/tables', async (req, res, next) => {
   try {
-    let divisions = [];
-    
-    // Helper function to promisify https.get
-    const fetchData = (url) => {
-      return new Promise((resolve, reject) => {
-        https.get(url, (response) => {
-          let data = [];
-          
-          response.on('data', chunk => {
-            data.push(chunk);
-          });
-          
-          response.on('end', () => {
-            const html = Buffer.concat(data).toString();
-            resolve(html);
-          });
-          
-          response.on('error', (err) => {
-            reject(err);
-          });
-        }).on('error', (err) => {
-          reject(err);
-        });
-      });
-    };
-    
-    // Fetch data from both URLs concurrently
-    const [manchesterHtml, tamesideHtml] = await Promise.all([
-      fetchData('https://www.manchesterbadmintonleague.org.uk/tables.php'),
-      fetchData('https://tameside-badminton.co.uk/tables/All')
-    ]);
-    
-    // Process Manchester data
-    const $manchester = cheerio.load(manchesterHtml);
-    const manchesterHTML = $manchester('table.footable');
-    const manchesterTableData = [];
-    
-    manchesterHTML.find('tr').each((i, row) => {
-      const rowData = {};
-      $manchester(row).find('td, th').each((j, cell) => {
-        rowData[j] = $manchester(cell).text();
-      });
-      manchesterTableData.push(rowData);
+    const divisions = await getTables();
+    res.render('tables', {
+      pageHeading: "League Tables",
+      title: "League Tables",
+      divisions,
+      static_path: "/static"
     });
-    
-    let currDivision = [];
-    for (const row of manchesterTableData) {
-      if (row["0"] && row["0"].indexOf("Division") > -1) {
-        if (currDivision.length > 0) {
-          let tidyDiv = currDivision.map(row => row.replaceAll('Division',' Manchester'));
-          divisions.push(tidyDiv);
-        }
-        currDivision = [];
-      }
-      currDivision.push(Object.values(row).join());
-    }
-    if (currDivision.length > 0) {
-      let tidyDiv = currDivision.map(row => row.replaceAll('Open Division','Manchester Open').replaceAll('Division',' Manchester'));
-      divisions.push(tidyDiv);
-    }
-    
-    // Process Tameside data
-    const $tameside = cheerio.load(tamesideHtml);
-    const tamesideHTML = $tameside('table');
-    const tamesideTableData = [];
-    
-    tamesideHTML.find('tr').each((i, row) => {
-      const rowData = {};
-      $tameside(row).find('td, th').each((j, cell) => {
-        rowData[j] = $tameside(cell).text();
-      });
-      tamesideTableData.push(rowData);
+  } catch (err) {
+    console.error('Error loading tables:', err);
+    res.status(500).render('homepage', {
+      pageHeading: "League Tables",
+      title: "League Tables",
+      entry: "<p>Sorry, league tables are temporarily unavailable.</p>",
+      static_path: "/static"
     });
-    
-    currDivision = [];
-    for (const row of tamesideTableData) {
-      if (row[0] && row[0].indexOf("Division") > -1) {
-        if (currDivision.length > 0) {
-          let tidyDiv = currDivision.map(row => row.replaceAll(/\n([\s]{2,})/gi, '').replaceAll('Division',' Tameside'));
-          divisions.push(tidyDiv);
-        }
-        currDivision = [];
-      }
-      currDivision.push(Object.values(row).join());
-    }
-    
-    // Don't forget the last division
-    if (currDivision.length > 0) {
-      let tidyDiv = currDivision.map(row => row.replaceAll(/\n([\s]{2,})/gi, '').replaceAll('Division',' Tameside'));
-      divisions.push(tidyDiv);
-    }
-    
-    // Filter for Hyde divisions
-    const hydeDivisions = divisions.filter(row => row.join().indexOf('Hyde') > -1);
-    
-    console.log(hydeDivisions);
-    res.render('tables',{
-        pageHeading:"League Tables",
-        title:"League Tables",
-        entry:hydeDivisions,
-        static_path : "/static" 
-    })
-    
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).send({ error: 'Failed to fetch table data' });
   }
 });
 

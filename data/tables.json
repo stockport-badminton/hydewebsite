@@ -1,0 +1,468 @@
+{
+  "divisions": [
+    {
+      "id": "manchester-division-3",
+      "league": "Manchester",
+      "name": "Division 3",
+      "hydeTeams": [
+        "Hyde 1"
+      ],
+      "columns": [
+        "Pos",
+        "Team",
+        "Played",
+        "Won",
+        "Drawn",
+        "Lost",
+        "Games/Match",
+        "Total Points"
+      ],
+      "rows": [
+        {
+          "isHyde": false,
+          "values": [
+            "1",
+            "Nomads 2",
+            "12",
+            "10",
+            "1",
+            "1",
+            "11.8",
+            "163"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "2",
+            "Hyde 1",
+            "12",
+            "8",
+            "1",
+            "3",
+            "10.1",
+            "138"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "3",
+            "ACE 2",
+            "12",
+            "6",
+            "1",
+            "5",
+            "10.4",
+            "135"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "4",
+            "Silver Feather",
+            "12",
+            "5",
+            "0",
+            "7",
+            "8.4",
+            "111"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "5",
+            "Yeti 2",
+            "12",
+            "4",
+            "1",
+            "7",
+            "7.8",
+            "102"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "6",
+            "Medlock 1",
+            "12",
+            "4",
+            "1",
+            "7",
+            "8.0",
+            "96"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "7",
+            "Nomads 3",
+            "12",
+            "2",
+            "1",
+            "9",
+            "6.5",
+            "83"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manchester-open-division-a",
+      "league": "Manchester",
+      "name": "Open Division A",
+      "hydeTeams": [
+        "Hyde O"
+      ],
+      "columns": [
+        "Pos",
+        "Team",
+        "Played",
+        "Won",
+        "Drawn",
+        "Lost",
+        "Games/Match",
+        "Total Points"
+      ],
+      "rows": [
+        {
+          "isHyde": false,
+          "values": [
+            "1",
+            "GHAP 2",
+            "16",
+            "15",
+            "0",
+            "1",
+            "14.4",
+            "261"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "2",
+            "Manchester Edgeley OA",
+            "16",
+            "13",
+            "2",
+            "1",
+            "12.3",
+            "224"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "3",
+            "Cheadle Hulme O",
+            "16",
+            "8",
+            "3",
+            "5",
+            "9.5",
+            "171"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "4",
+            "Manor O",
+            "16",
+            "7",
+            "1",
+            "8",
+            "8.3",
+            "148"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "5",
+            "Swift Shuttlers A",
+            "16",
+            "6",
+            "1",
+            "9",
+            "8.2",
+            "144"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "6",
+            "Medlock O",
+            "15",
+            "5",
+            "3",
+            "7",
+            "8.0",
+            "133"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "7",
+            "GHAP 3",
+            "15",
+            "5",
+            "2",
+            "8",
+            "7.9",
+            "130"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "8",
+            "Nomads O",
+            "16",
+            "4",
+            "0",
+            "12",
+            "7.0",
+            "120"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "9",
+            "Hyde O",
+            "16",
+            "1",
+            "2",
+            "13",
+            "5.3",
+            "89"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tameside-division-1",
+      "league": "Tameside",
+      "name": "Division 1",
+      "hydeTeams": [
+        "Hyde B",
+        "Hyde A"
+      ],
+      "columns": [
+        "Team",
+        "P",
+        "W",
+        "L",
+        "Avg"
+      ],
+      "rows": [
+        {
+          "isHyde": true,
+          "values": [
+            "Hyde B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Shell A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "College Green A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Manchester Edgeley A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "Hyde A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Syddal Park A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "GHAP A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "GHAP B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Manchester Edgeley B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tameside-division-2",
+      "league": "Tameside",
+      "name": "Division 2",
+      "hydeTeams": [
+        "Hyde C"
+      ],
+      "columns": [
+        "Team",
+        "P",
+        "W",
+        "L",
+        "Avg"
+      ],
+      "rows": [
+        {
+          "isHyde": false,
+          "values": [
+            "Mellor A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Manor A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Medlock A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Alderley Park TS",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "Hyde C",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Disley A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Mellor B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "College Green B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Aerospace B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-07-21T15:33:39.016Z"
+}

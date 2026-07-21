@@ -2,79 +2,18 @@
 <%- include('nav.ejs') %>
 
 <h2><%= pageHeading %></h2>
-<% entry.forEach(function(row){ 
-    if (row[0].indexOf('Manchester') > -1){ 
-        var item = row[0].split(',')
-        var title = item[0]
-        %>
-        <p><%= title %></p>
-        <table class="table-responsive table-bordered">
-            <tr>
-                <th></th>
-                <th></th>
-                <th>Played</th>
-                <th>Won</th>
-                <th>Drawn</th>
-                <th>Lost</th>
-                <th>Aces For</th>
-                <th>Aces Against</th>
-                <th>Games For</th>
-                <th>Games Against</th>
-                <th>Penalties</th>
-                <th>Conceded</th>
-                <th>Games/Match</th>
-                <th>Total Points</th>
-            </tr>
-            <% 
-            row.forEach(function(cell){
-                if (cell.indexOf('Match') == -1){
-                    var items = cell.split(',')
-                    if (items.length > 2) {
-                    %><tr><%
-                    items.forEach(function(item){
-                        %><td><%= item %></td><%
-
-                    })
-                    %></tr><%
-                    }
-                }
-                    
-            })
-    } 
-    else { 
-        var item = row[0].split(',')
-        var title = item[0]
-        %>
-        <p><%= title %></p>
-
-        <table class="table-responsive table-bordered">
-            <tr>
-                <th></th>
-                <th>Played</th>
-                <th>Won</th>
-                <th>Lost</th>
-                <th>Average</th>
-            </tr> <% 
-            row.forEach(function(cell){
-                if (cell.indexOf('Tameside') == -1){
-                    var items = cell.split(',')
-                    %> <tr> <%
-                    items.forEach(function(item){
-                        %><td><%= item %></td><%
-
-                    })
-                    %></tr><%
-                }
-                    
-            }) 
-            %>
-    <% }
-    %>
-    </table>
+<% divisions.forEach(function(division){ %>
+<h4><%= division.league %> &mdash; <%= division.name %> <small class="text-muted">(<%= division.hydeTeams.join(' & ') %>)</small></h4>
+<table class="table-responsive table-bordered text-center mb-4">
+    <tr>
+        <% division.columns.forEach(function(col){ %><th><%= col %></th><% }) %>
+    </tr>
+    <% division.rows.forEach(function(row){ %>
+    <tr class="<%= row.isHyde ? 'table-warning' : '' %>">
+        <% row.values.forEach(function(value){ %><td><%= value %></td><% }) %>
+    </tr>
+    <% }) %>
+</table>
 <% }) %>
 
-
 <%- include('footer.ejs') %>
-
-
-

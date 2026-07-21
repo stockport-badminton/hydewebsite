@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { computeSeason } from '../lib/season.js';
+import { isHydeTeam } from '../lib/hyde.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT = join(__dirname, '../data/fixtures.json');
@@ -26,9 +27,6 @@ const TAMESIDE_URL = 'https://tameside-badminton.co.uk/fixtures/club-Hyde';
 // Manchester enters Hyde's squads as "Hyde 1"/"Hyde O", Tameside as "Hyde
 // A"/"Hyde B"/"Hyde C". Kept as distinct teams rather than merged, since a
 // visitor picking "Hyde 1" wants Manchester results, not a blend of both.
-function isHydeTeam(name) {
-  return name.toLowerCase().includes('hyde');
-}
 
 // ── Manchester (HTML scrape) ─────────────────────────────────────────────────
 
