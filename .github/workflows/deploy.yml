@@ -3,6 +3,11 @@ name: Deploy to App Engine
 on:
   push:
     branches: [main]
+    # The fixtures scraper commits data/fixtures.json straight to main on its
+    # own schedule; the live app fetches that file's raw GitHub URL at request
+    # time, so a data-only commit doesn't need a redeploy.
+    paths-ignore:
+      - 'data/**'
 
 permissions:
   contents: read

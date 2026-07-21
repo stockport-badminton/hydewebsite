@@ -123,87 +123,28 @@ app.get('/history/:season', (req, res, next) => {
 
 
 const https = require('https');
+const { computeSeason, seasonLabel } = require('./lib/season');
 
-app.get('/getMancFixtures',(req,res,next) => {
+// Fixtures are scraped out-of-band by scripts/scrape-fixtures.mjs (run on a
+// schedule via GitHub Actions) and committed to data/fixtures.json. The app
+// just reads that file's raw GitHub URL instead of live-scraping the league
+// sites on every request — keeps the request path immune to the leagues'
+// sites changing markup or returning something unparseable.
+const FIXTURES_JSON_URL = process.env.FIXTURES_JSON_URL || 'https://raw.githubusercontent.com/stockport-badminton/hydewebsite/main/data/fixtures.json';
+const FIXTURES_CACHE_TTL_MS = 10 * 60 * 1000;
+let fixturesCache = { fixtures: null, fetchedAt: 0 };
 
-  https.get('https://www.manchesterbadmintonleague.org.uk/fixtures.php', fixRes => {
-    let data = [];
-    const headerDate = fixRes.headers && fixRes.headers.date ? fixRes.headers.date : 'no response date';
-    fixRes.on('data', chunk => {
-      data.push(chunk);
-    });
-    fixRes.on('end', () => {
-      console.log('Response ended: ');
-      const fixturesResponse = Buffer.concat(data).toString();
-      // console.log(fixturesResponse)
-      const $ = cheerio.load(fixturesResponse);
-      const fixturesHTML = $('#listfixtures'); 
-      const tableData = [];
-      fixturesHTML.find('tr').each((i, row) => {
-          const rowData = {};
-          $(row).find('td, th').each((j, cell) => {
-              rowData[j] = $(cell).text();
-          });
-          tableData.push(rowData);
-      });
-      const months = Array.from({length: 12}, (item, i) => {
-        return new Date(0, i).toLocaleString('en-US', {month: 'short'})
-      });
-      let HydeFixtures = tableData.filter(row => row[2].indexOf("Hyde") > -1 )
-      // console.log(HydeFixtures)
-      let mancFixtures = HydeFixtures.map(row => {
-        let tempDateArray = row['0'].trim().split(' ')
-        let teamsArray = row['2'].trim().split(' v ')
-        console.log(teamsArray)
-        let opposition = teamsArray[0].indexOf('Hyde') > -1  ? teamsArray[1].trim() : teamsArray[0].trim()
-        let homeOrAway = teamsArray[0].indexOf('Hyde') > -1 ? "home" : "away"
-        if (months.indexOf(tempDateArray[2]) > 0 ){
-          return {"date":tempDateArray[1] + "/" + (months.indexOf(tempDateArray[2])+1) + "/" + tempDateArray[3],"competition":row['1'].trim(),"opposition":opposition,"homeOrAway":homeOrAway,"result":row['3'].trim()}
-        }
-        else {
-          return {"date":"01/08/2024","competition":row['1'].trim(),"opposition":opposition,"homeOrAway":homeOrAway,"result":row['3'].trim()}
-        }
-        
-      })
-      https.get('https://tameside-badminton.co.uk/fixtures/club-Hyde', fixRes => {
-        let data = []
-        fixRes.on('data', chunk => {
-          data.push(chunk);
-        });
-        fixRes.on('end', () => {
-          console.log('Response ended: ');
-          const newFixturesResponse = Buffer.concat(data).toString();
-          // console.log(JSON.parse(newFixturesResponse))
-          let tamesideFixtures = JSON.parse(newFixturesResponse).map(row => {
-            let fixDate = new Date(row.date).toLocaleDateString('en-GB',{day:'numeric',month:'numeric',year:'numeric'})
-            let opposition = row['hometeam'].indexOf('Hyde') > 0 ? row.awayteam : row.hometeam
-            let homeOrAway = row['hometeam'].indexOf('Hyde') > 0 ? "home" : "away"
-            if (row.homeScore !== null){
-              return {"date":fixDate,"competition":"Tameside","opposition":opposition,"homeOrAway":homeOrAway,"result":row.homeScore+"-"+row.awayScore}  
-            }
-            else{
-              return {"date":fixDate,"competition":"Tameside","opposition":opposition,"homeOrAway":homeOrAway,"result":"TBC"}
-            }
-          })
-          let allFixtures = mancFixtures.concat(tamesideFixtures)
-          allFixtures.sort(function(a, b){
-            var aa = a.date.split('/').reverse().join(),
-                bb = b.date.split('/').reverse().join();
-            return aa < bb ? -1 : (aa > bb ? 1 : 0);
-          });
-          res.send(allFixtures)
-        })
-          
-      // console.log(tableData)
-      }).on('error', err => {
-        console.log('Error: ', err.message);
-      });
-    });
-  }).on('error', err => {
-    console.log('Error: ', err.message);
-  });
-})
+async function getFixtures() {
+  const isFresh = fixturesCache.fixtures && (Date.now() - fixturesCache.fetchedAt) < FIXTURES_CACHE_TTL_MS;
+  if (isFresh) return fixturesCache.fixtures;
+  const response = await fetch(FIXTURES_JSON_URL);
+  if (!response.ok) throw new Error(`Fixtures fetch failed: ${response.status}`);
+  const { fixtures } = await response.json();
+  fixturesCache = { fixtures, fetchedAt: Date.now() };
+  return fixtures;
+}
 
+const dayNames = Array.from({ length: 7 }, (_, i) => new Date(0, 0, i).toLocaleString('en-US', { weekday: 'short' }));
 
 app.get('/gallery', (req, res, next) => {
   client.getEntry('IKaXhRQqSysI0udkAcZXZ')
@@ -331,140 +272,47 @@ app.get('/tables', async (req, res, next) => {
   }
 });
 
-app.get('/fixtures/:team', (req, res, next) => {
-  https.get('https://www.manchesterbadmintonleague.org.uk/fixtures.php', fixRes => {
-    let data = [];
-    const headerDate = fixRes.headers && fixRes.headers.date ? fixRes.headers.date : 'no response date';
-    fixRes.on('data', chunk => {
-      data.push(chunk);
-    });
-    fixRes.on('end', () => {
-      console.log('Response ended: ');
-      const fixturesResponse = Buffer.concat(data).toString();
-      //console.log(fixturesResponse)
-      const $ = cheerio.load(fixturesResponse);
-      const fixturesHTML = $('#listfixtures'); 
-      //console.log(fixturesHTML)
-      const tableData = [];
-      fixturesHTML.find('tr').each((i, row) => {
-          const rowData = {};
-          $(row).find('td, th').each((j, cell) => {
-              rowData[j] = $(cell).text();
-          });
-          tableData.push(rowData);
-          //console.log(rowData)
-      });
-      const months = Array.from({length: 12}, (item, i) => {
-        return new Date(0, i).toLocaleString('en-US', {month: 'short'})
-      });
-      const dayNames = Array.from({ length: 7 }, (_, i) => {
-        return new Date(0,0,i).toLocaleString('en-US', { weekday: 'short' });
-        });
-      let HydeFixtures = tableData.filter(row => row[3].indexOf("Hyde") > -1 )
-      //console.log(months)
-      // console.log(HydeFixtures)
-      let mancFixtures = HydeFixtures.map(row => {
-        let tempDateArray = row['0'].trim().split('/')
-        // console.log(row)
-        // console.log(months.indexOf(tempDateArray[2]))
-        
-        let teamsArray = row['3'].trim().split(' v ')
-        
-        let opposition = teamsArray[0].indexOf('Hyde') > -1  ? teamsArray[1].trim() : teamsArray[0].trim()
-        let team = teamsArray[0].indexOf('Hyde') > -1  ? teamsArray[0].trim() : teamsArray[1].trim()
-        let homeOrAway = teamsArray[0].indexOf('Hyde') > -1 ? "home" : "away"
-        // console.log(tempDateArray[0] + "/" + tempDateArray[2] + "/" + tempDateArray[1])
-        let weekday = new Date(tempDateArray[1] + "/" + tempDateArray[0] + "/" + tempDateArray[2])
-        // console.log(weekday)
-        weekday = dayNames[weekday.getDay()]
-        // if (months.indexOf(tempDateArray[1]) >= 0 ){
-        if (row['0'].indexOf('TBA') == -1){
-          return {"date":("0" + tempDateArray[0]).slice(-2) + "/" + ("0" + tempDateArray[1]).slice(-2) + "/" + tempDateArray[2],"dotw":weekday,"competition":row['2'].trim(),"team":team,"opposition":opposition,"homeOrAway":homeOrAway,"result":row['4'].trim()}
-        }
-        else {
-          return {"date":"TBA","dotw":weekday,"competition":row['2'].trim(),"team":team,"opposition":opposition,"homeOrAway":homeOrAway,"result":row['4'].trim()}
-        }
-        
-      })
-      // console.log(mancFixtures)
-      let tamesideTeam = "Hyde High A"
-      switch (req.params.team){
-        case "Hyde A":
-          tamesideTeam = "Hyde High A"
-          break;
-        case "Hyde B":
-          tamesideTeam = "Hyde High B"
-          break;
-        case "Hyde C":
-          tamesideTeam = "Hyde High C"
-          break;
-        default:
-          tamesideTeam = "Hyde High A"
-      }
-      https.get('https://tameside-badminton.co.uk/fixtures/team-'+tamesideTeam, fixRes => {
-        let data = []
-        fixRes.on('data', chunk => {
-          data.push(chunk);
-        });
-        fixRes.on('end', () => {
-          console.log('Response ended: ');
-          const newFixturesResponse = Buffer.concat(data).toString();
-          // console.log(JSON.parse(newFixturesResponse))
-          let tamesideFixtures = JSON.parse(newFixturesResponse).map(row => {
-            let fixDate = new Date(row.date).toLocaleDateString('en-GB',{day:'numeric',month:'numeric',year:'numeric'})
-            let opposition = row['homeTeam'].indexOf(tamesideTeam) >= 0 ? row.awayTeam : row.homeTeam
-            let team = row['homeTeam'].indexOf(tamesideTeam) >= 0 ? row.homeTeam : row.awayTeam
-            let homeOrAway = row['homeTeam'].indexOf(tamesideTeam) >= 0 ? "home" : "away"
-            let weekday = new Date(row.date).getDay()
-            weekday = dayNames[weekday]
-            if (row.homeScore !== null){
-              return {"date":fixDate,"dotw":weekday,"competition":"Tameside","team":team,"opposition":opposition,"homeOrAway":homeOrAway,"result":row.homeScore+"-"+row.awayScore}  
-            }
-            else{
-              return {"date":fixDate,"dotw":weekday,"competition":"Tameside","team":team,"opposition":opposition,"homeOrAway":homeOrAway,"result":""}
-            }
-          })
-          // console.log(tamesideFixtures)
-          let allFixtures = mancFixtures.concat(tamesideFixtures)
-          allFixtures.sort(function(a, b){
-            var aa = a.date.split('/').reverse().join(),
-                bb = b.date.split('/').reverse().join();
-            return aa < bb ? -1 : (aa > bb ? 1 : 0);
-          });
-          let teamFixtures = []
-            switch (req.params.team){
-              case "Hyde A":
-                teamFixtures = allFixtures.filter(row => (row.team.indexOf("Hyde High A") >= 0 || row.team.indexOf("Hyde 1") >= 0) )
-                break;
-              case "Hyde B":
-                teamFixtures = allFixtures.filter(row => (row.team.indexOf("Hyde High B") >= 0 || row.team.indexOf("Hyde O") >= 0) )
-                break;
-              case "Hyde C":
-                teamFixtures = allFixtures.filter(row => (row.team.indexOf("Hyde High C") >= 0))
-                break;
-              default:
-                teamFixtures = allFixtures
-            }
-            // console.log(teamFixtures)
-            res.render('fixtures',{
-                pageHeading:req.params.team + " Fixtures",
-                title:req.params.team + " Fixtures",
-                result:teamFixtures,
-                static_path : "/static" 
-            })
-        })
-          
-      // console.log(tableData)
-      }).on('error', err => {
-        console.log('Error: ', err.message);
-      });
-    });
-  }).on('error', err => {
-    console.log('Error: ', err.message);
-  });
+app.get('/fixtures/:team/:season?', async (req, res, next) => {
+  try {
+    const fixtures = await getFixtures();
+    const teamFixtures = fixtures.filter((f) => f.team === req.params.team);
 
-    
-      
+    const seasons = [...new Set(teamFixtures.map((f) => f.season))].sort().reverse();
+    const currentSeason = computeSeason(new Date().toISOString());
+    const season = req.params.season || (seasons.includes(currentSeason) ? currentSeason : seasons[0]);
+
+    const result = teamFixtures
+      .filter((f) => f.season === season)
+      .map((f) => {
+        const fixtureDate = new Date(f.date);
+        return {
+          date: fixtureDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }),
+          dotw: dayNames[fixtureDate.getDay()],
+          competition: f.competition,
+          opposition: f.opposition,
+          homeOrAway: f.homeOrAway,
+          result: f.result,
+        };
+      });
+
+    res.render('fixtures', {
+      pageHeading: req.params.team + " Fixtures",
+      title: req.params.team + " Fixtures",
+      result,
+      static_path: "/static",
+      team: req.params.team,
+      season,
+      seasons: seasons.map((s) => ({ value: s, label: seasonLabel(s) })),
+    });
+  } catch (err) {
+    console.error('Error loading fixtures:', err);
+    res.status(500).render('homepage', {
+      pageHeading: req.params.team + " Fixtures",
+      title: req.params.team + " Fixtures",
+      entry: "<p>Sorry, fixtures are temporarily unavailable.</p>",
+      static_path: "/static"
+    });
+  }
 })
 
 app.get('/news', (req, res, next) => {

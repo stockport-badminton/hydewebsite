@@ -1,0 +1,40 @@
+name: Scrape Fixtures
+
+on:
+  # Run once daily at 5am UTC
+  schedule:
+    - cron: '0 5 * * *'
+  # Allow manual trigger from the GitHub Actions UI
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run scraper
+        run: npm run scrape
+
+      - name: Commit updated fixtures
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fixtures.json
+          git diff --cached --quiet && echo "No changes." || git commit -m "chore: update fixtures"
+
+      - name: Push
+        run: git diff HEAD~1 HEAD --quiet 2>/dev/null && echo "Nothing to push." || git push
