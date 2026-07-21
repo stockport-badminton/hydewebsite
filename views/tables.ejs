@@ -1,19 +1,23 @@
 <%- include('header.ejs') %>
 <%- include('nav.ejs') %>
+<%- include('partials/page-header.ejs') %>
 
-<h2><%= pageHeading %></h2>
-<% divisions.forEach(function(division){ %>
-<h4><%= division.league %> &mdash; <%= division.name %> <small class="text-muted">(<%= division.hydeTeams.join(' & ') %>)</small></h4>
-<table class="table-responsive table-bordered text-center mb-4">
-    <tr>
-        <% division.columns.forEach(function(col){ %><th><%= col %></th><% }) %>
-    </tr>
-    <% division.rows.forEach(function(row){ %>
-    <tr class="<%= row.isHyde ? 'table-warning' : '' %>">
-        <% row.values.forEach(function(value){ %><td><%= value %></td><% }) %>
-    </tr>
-    <% }) %>
-</table>
-<% }) %>
+<main class="container py-4">
+  <% divisions.forEach(function(division){ %>
+  <h2 class="data-card-heading"><%= division.league %> &mdash; <%= division.name %> <small class="text-muted">(<%= division.hydeTeams.join(' & ') %>)</small></h2>
+  <div class="data-card">
+    <table class="text-center mb-0">
+        <tr>
+            <% division.columns.forEach(function(col){ %><th><%= col %></th><% }) %>
+        </tr>
+        <% division.rows.forEach(function(row){ %>
+        <tr class="<%= row.isHyde ? 'table-highlight' : '' %>">
+            <% row.values.forEach(function(value){ %><td><%= value %></td><% }) %>
+        </tr>
+        <% }) %>
+    </table>
+  </div>
+  <% }) %>
+</main>
 
 <%- include('footer.ejs') %>

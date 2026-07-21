@@ -1,0 +1,23 @@
+// Bootstrap variable overrides — must be set before Bootstrap's own
+// `@import` in main.scss, since that's how Bootstrap's SCSS is designed to
+// be themed (its own variables fall back to `!default`, so anything set
+// here wins).
+$primary: #7a2048; // wine
+$secondary: #c9922a; // warm gold
+$body-bg: #fbf7f4; // warm off-white, not stark white
+$body-color: #2a2220; // warm near-black
+$link-color: $primary;
+$border-radius: .6rem;
+$font-family-sans-serif: "Source Sans 3", system-ui, sans-serif;
+$headings-font-family: "Fraunces", Georgia, serif;
+$headings-font-weight: 600;
+
+// Values Bootstrap's theme-color slots don't cover, kept as plain CSS custom
+// properties so hand-written component rules in _components.scss don't need
+// SCSS variable interpolation.
+:root {
+  --accent: #1f7a70;
+  --win: #2f7d4f;
+  --loss: #b3423a;
+  --draw: #b3852a;
+}

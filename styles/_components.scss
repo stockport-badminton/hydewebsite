@@ -1,0 +1,250 @@
+// Hand-written component styles layered on top of themed Bootstrap.
+// Everything here is presentation only — no view relies on these class
+// names for behavior, so they're safe to keep tweaking independently.
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// ── Nav ──────────────────────────────────────────────────────────────────
+
+.navbar-hyde {
+  background: $primary;
+
+  .navbar-brand {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    color: #fff;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, .8);
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+  }
+
+  .dropdown-menu {
+    border: none;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .15);
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background: $primary;
+  }
+}
+
+// ── Page header banner ───────────────────────────────────────────────────
+
+.page-header {
+  background: linear-gradient(135deg, $primary, #5c1735);
+  color: #fff;
+  padding: 2.75rem 0 2.25rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0;
+    font-size: 2.25rem;
+  }
+
+  .page-header-subheading {
+    margin: .5rem 0 0;
+    color: rgba(255, 255, 255, .85);
+    font-size: 1.05rem;
+  }
+}
+
+// ── Prose (Contentful rich text) ────────────────────────────────────────
+
+.prose {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: $border-radius;
+  padding: 2rem;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .04);
+
+  h2, h3, h4 {
+    color: $primary;
+    margin-top: 1.75rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration-color: rgba(31, 122, 112, .4);
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+
+    td, th {
+      border: 1px solid rgba(0, 0, 0, .1);
+      padding: .5rem .75rem;
+    }
+  }
+
+  iframe {
+    border-radius: $border-radius;
+    max-width: 100%;
+  }
+}
+
+// ── Data cards (fixtures / tables) ──────────────────────────────────────
+
+.data-card {
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .04);
+  margin-bottom: 2rem;
+
+  table {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  thead th,
+  tr:first-child th {
+    background: $primary;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: none;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background: rgba(0, 0, 0, .02);
+  }
+
+  .table-highlight {
+    background: rgba(201, 146, 42, .18) !important;
+    font-weight: 600;
+  }
+}
+
+.data-card-heading {
+  font-size: 1.15rem;
+  color: $primary;
+  margin: 0 0 .75rem;
+}
+
+// ── Result badges ────────────────────────────────────────────────────────
+
+.badge-result {
+  display: inline-block;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #fff;
+
+  &.badge-result--win { background: var(--win); }
+  &.badge-result--loss { background: var(--loss); }
+  &.badge-result--draw { background: var(--draw); }
+}
+
+// ── Season pills (fixtures page) ────────────────────────────────────────
+
+.nav-pills .nav-link {
+  color: $primary;
+
+  &.active {
+    background: $primary;
+  }
+}
+
+// ── Gallery carousel ─────────────────────────────────────────────────────
+
+#carouselExample {
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+
+  .carousel-item img {
+    width: 100%;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background: linear-gradient(to right, rgba(0, 0, 0, .15), transparent);
+  }
+
+  .carousel-control-next {
+    background: linear-gradient(to left, rgba(0, 0, 0, .15), transparent);
+  }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────
+
+.site-footer {
+  background: #401025;
+  color: rgba(255, 255, 255, .7);
+  margin-top: 3rem;
+  padding: 3rem 0 1.5rem;
+
+  .footer-brand {
+    font-family: $headings-font-family;
+    color: #fff;
+    font-size: 1.35rem;
+    margin-bottom: .5rem;
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, .6);
+    font-size: .9rem;
+  }
+
+  h3 {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: .75rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: .4rem;
+    font-size: .9rem;
+  }
+
+  a {
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .5);
+  }
+}

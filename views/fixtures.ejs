@@ -1,42 +1,44 @@
 <%- include('header.ejs') %>
 <%- include('nav.ejs') %>
+<%- include('partials/page-header.ejs') %>
 
-
-<h2>Fixtures</h2>
-<% if (typeof seasons !== 'undefined' && seasons.length > 1) { %>
-<ul class="nav nav-pills mb-3">
-    <% seasons.forEach(function(s){ %>
-    <li class="nav-item">
-        <a class="nav-link <%= s.value === season ? 'active' : '' %>" href="/fixtures/<%= team %>/<%= s.value %>"><%= s.label %></a>
-    </li>
-    <% }) %>
-</ul>
-<% } %>
-<table class="table-responsive table-bordered text-center">
-    <tr>
-        <th><p>Date</p></th>
-        <th><p>Day</p></th>
-        <th><p>Opponents</p></th>
-        <th><p>Home/Away</p></th>
-        <th><p>Competition</p></th>
-        <th><p>Result</p></th>
-    </tr>
-    <%
-        
-    %>
-    <% for (row of result){ %>
-    <tr>
-        <td><p><%= row.date %></p></td>
-        <td><p><%= row.dotw %></p></td>
-        <td><p><%= row.opposition %></p></td>
-        <td><p><%= row.homeOrAway %></p></td>
-        <td><p><%= row.competition %></p></td>
-        <td><p><%= row.result %></p></td>
-    </tr>
-    <% } %>
-</table>
+<main class="container py-4">
+  <% if (typeof seasons !== 'undefined' && seasons.length > 1) { %>
+  <ul class="nav nav-pills mb-3">
+      <% seasons.forEach(function(s){ %>
+      <li class="nav-item">
+          <a class="nav-link <%= s.value === season ? 'active' : '' %>" href="/fixtures/<%= team %>/<%= s.value %>"><%= s.label %></a>
+      </li>
+      <% }) %>
+  </ul>
+  <% } %>
+  <div class="data-card">
+    <table class="text-center mb-0">
+        <tr>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Opponents</th>
+            <th>Home/Away</th>
+            <th>Competition</th>
+            <th>Result</th>
+        </tr>
+        <% for (row of result){ %>
+        <tr>
+            <td><%= row.date %></td>
+            <td><%= row.dotw %></td>
+            <td><%= row.opposition %></td>
+            <td><%= row.homeOrAway %></td>
+            <td><%= row.competition %></td>
+            <td>
+              <%= row.result %>
+              <% if (row.outcome) { %>
+              <span class="badge-result badge-result--<%= row.outcome %>"><%= row.outcome %></span>
+              <% } %>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+  </div>
+</main>
 
 <%- include('footer.ejs') %>
-
-
-
