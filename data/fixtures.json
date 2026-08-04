@@ -267,20 +267,6 @@
       "result": "9 - 9"
     },
     {
-      "id": "manchester-2026-02-11T19:00:00.000Z-Hyde-1-Nomads-2",
-      "league": "Manchester",
-      "date": "2026-02-11T19:00:00.000Z",
-      "season": "20252026",
-      "team": "Hyde 1",
-      "opposition": "Nomads 2",
-      "homeOrAway": "home",
-      "competition": "Div3",
-      "status": "complete",
-      "homeScore": 3,
-      "awayScore": 15,
-      "result": "3 - 15"
-    },
-    {
       "id": "manchester-2026-02-11T19:00:00.000Z-Nomads-O-Hyde-O",
       "league": "Manchester",
       "date": "2026-02-11T19:00:00.000Z",
@@ -293,6 +279,20 @@
       "homeScore": 10,
       "awayScore": 8,
       "result": "10 - 8"
+    },
+    {
+      "id": "manchester-2026-02-11T19:00:00.000Z-Hyde-1-Nomads-2",
+      "league": "Manchester",
+      "date": "2026-02-11T19:00:00.000Z",
+      "season": "20252026",
+      "team": "Hyde 1",
+      "opposition": "Nomads 2",
+      "homeOrAway": "home",
+      "competition": "Div3",
+      "status": "complete",
+      "homeScore": 3,
+      "awayScore": 15,
+      "result": "3 - 15"
     },
     {
       "id": "manchester-2026-02-18T19:00:00.000Z-Hyde-O-GHAP-2",
@@ -1051,5 +1051,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-08-03T08:21:52.441Z"
+  "lastUpdated": "2026-08-04T07:30:42.269Z"
 }
