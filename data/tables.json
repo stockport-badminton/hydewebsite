@@ -1,6 +1,280 @@
 {
   "divisions": [
     {
+      "id": "manchester-division-2",
+      "league": "Manchester",
+      "name": "Division 2",
+      "hydeTeams": [
+        "Hyde 1"
+      ],
+      "columns": [
+        "Pos",
+        "Team",
+        "Played",
+        "Won",
+        "Drawn",
+        "Lost",
+        "Games/Match",
+        "Total Points"
+      ],
+      "rows": [
+        {
+          "isHyde": false,
+          "values": [
+            "1",
+            "ACE 2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "2",
+            "Dome 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "3",
+            "Featherstorm",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "4",
+            "Forest",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "5",
+            "Hyde 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "6",
+            "Manchester Edgeley C",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "7",
+            "MTB 2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "8",
+            "Nomads 2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "9",
+            "Roe Green 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manchester-division-3",
+      "league": "Manchester",
+      "name": "Division 3",
+      "hydeTeams": [
+        "Hyde 2"
+      ],
+      "columns": [
+        "Pos",
+        "Team",
+        "Played",
+        "Won",
+        "Drawn",
+        "Lost",
+        "Games/Match",
+        "Total Points"
+      ],
+      "rows": [
+        {
+          "isHyde": false,
+          "values": [
+            "1",
+            "Blue Triangle 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "2",
+            "Cheadle Hulme 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "3",
+            "GZD 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "4",
+            "Heys A",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "5",
+            "Hyde 2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "6",
+            "Medlock 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "7",
+            "Nettles 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "8",
+            "Nomads 3",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "9",
+            "Silver Feather 1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
       "id": "tameside-division-1",
       "league": "Tameside",
       "name": "Division 1",
@@ -216,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-08-13T06:09:31.354Z"
+  "lastUpdated": "2026-08-14T06:07:29.136Z"
 }
