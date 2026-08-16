@@ -659,6 +659,20 @@
       "result": ""
     },
     {
+      "id": "manchester-2026-10-21T19:00:00.000Z-Cheadle-Hulme-1-Hyde-2",
+      "league": "Manchester",
+      "date": "2026-10-21T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Cheadle Hulme 1",
+      "homeOrAway": "away",
+      "competition": "Div3",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
       "id": "manchester-2026-10-27T19:00:00.000Z-Silver-Feather-1-Hyde-2",
       "league": "Manchester",
       "date": "2026-10-27T19:00:00.000Z",
@@ -765,6 +779,20 @@
       "opposition": "GHAP A",
       "homeOrAway": "home",
       "competition": "Tameside",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
+      "id": "manchester-2026-12-02T19:00:00.000Z-Hyde-2-Cheadle-Hulme-1",
+      "league": "Manchester",
+      "date": "2026-12-02T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Cheadle Hulme 1",
+      "homeOrAway": "home",
+      "competition": "Div3",
       "status": "outstanding",
       "homeScore": null,
       "awayScore": null,
@@ -1003,6 +1031,20 @@
       "opposition": "Shell A",
       "homeOrAway": "away",
       "competition": "Tameside",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
+      "id": "manchester-2027-02-16T19:00:00.000Z-Heys-A-Hyde-2",
+      "league": "Manchester",
+      "date": "2027-02-16T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Heys A",
+      "homeOrAway": "away",
+      "competition": "Div3",
       "status": "outstanding",
       "homeScore": null,
       "awayScore": null,
@@ -1359,5 +1401,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-08-15T05:17:06.858Z"
+  "lastUpdated": "2026-08-16T05:19:27.423Z"
 }
