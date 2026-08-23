@@ -715,6 +715,20 @@
       "result": ""
     },
     {
+      "id": "manchester-2026-11-04T19:00:00.000Z-Manchester-Edgeley-C-Hyde-1",
+      "league": "Manchester",
+      "date": "2026-11-04T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 1",
+      "opposition": "Manchester Edgeley C",
+      "homeOrAway": "away",
+      "competition": "Div2",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
       "id": "tameside-6078",
       "league": "Tameside",
       "date": "2026-11-11T00:00:00.000Z",
@@ -751,6 +765,20 @@
       "opposition": "Manchester Edgeley A",
       "homeOrAway": "away",
       "competition": "Tameside",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
+      "id": "manchester-2026-11-23T19:00:00.000Z-Blue-Triangle-1-Hyde-2",
+      "league": "Manchester",
+      "date": "2026-11-23T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Blue Triangle 1",
+      "homeOrAway": "away",
+      "competition": "Div3",
       "status": "outstanding",
       "homeScore": null,
       "awayScore": null,
@@ -841,6 +869,20 @@
       "result": ""
     },
     {
+      "id": "manchester-2026-12-16T19:00:00.000Z-Heys-A-Hyde-2",
+      "league": "Manchester",
+      "date": "2026-12-16T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Heys A",
+      "homeOrAway": "away",
+      "competition": "Div3",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
       "id": "manchester-2026-12-17T19:00:00.000Z-Featherstorm-Hyde-1",
       "league": "Manchester",
       "date": "2026-12-17T19:00:00.000Z",
@@ -883,14 +925,14 @@
       "result": ""
     },
     {
-      "id": "manchester-2027-01-11T19:00:00.000Z-Blue-Triangle-1-Hyde-2",
+      "id": "manchester-2027-01-06T19:00:00.000Z-Dome-1-Hyde-1",
       "league": "Manchester",
-      "date": "2027-01-11T19:00:00.000Z",
+      "date": "2027-01-06T19:00:00.000Z",
       "season": "20262027",
-      "team": "Hyde 2",
-      "opposition": "Blue Triangle 1",
+      "team": "Hyde 1",
+      "opposition": "Dome 1",
       "homeOrAway": "away",
-      "competition": "Div3",
+      "competition": "Div2",
       "status": "outstanding",
       "homeScore": null,
       "awayScore": null,
@@ -919,6 +961,34 @@
       "opposition": "GHAP A",
       "homeOrAway": "away",
       "competition": "Tameside",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
+      "id": "manchester-2027-01-13T19:00:00.000Z-Hyde-1-Manchester-Edgeley-C",
+      "league": "Manchester",
+      "date": "2027-01-13T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 1",
+      "opposition": "Manchester Edgeley C",
+      "homeOrAway": "home",
+      "competition": "Div2",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
+      "id": "manchester-2027-01-13T19:00:00.000Z-Hyde-2-Nomads-3",
+      "league": "Manchester",
+      "date": "2027-01-13T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Nomads 3",
+      "homeOrAway": "home",
+      "competition": "Div3",
       "status": "outstanding",
       "homeScore": null,
       "awayScore": null,
@@ -1009,6 +1079,20 @@
       "result": ""
     },
     {
+      "id": "manchester-2027-02-04T19:00:00.000Z-Medlock-1-Hyde-2",
+      "league": "Manchester",
+      "date": "2027-02-04T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Medlock 1",
+      "homeOrAway": "away",
+      "competition": "Div3",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
       "id": "tameside-6121",
       "league": "Tameside",
       "date": "2027-02-10T00:00:00.000Z",
@@ -1037,20 +1121,6 @@
       "result": ""
     },
     {
-      "id": "manchester-2027-02-16T19:00:00.000Z-Heys-A-Hyde-2",
-      "league": "Manchester",
-      "date": "2027-02-16T19:00:00.000Z",
-      "season": "20262027",
-      "team": "Hyde 2",
-      "opposition": "Heys A",
-      "homeOrAway": "away",
-      "competition": "Div3",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
-    },
-    {
       "id": "tameside-6124",
       "league": "Tameside",
       "date": "2027-02-17T00:00:00.000Z",
@@ -1073,6 +1143,20 @@
       "opposition": "Aerospace B",
       "homeOrAway": "away",
       "competition": "Tameside",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
+      "id": "manchester-2027-02-24T19:00:00.000Z-Hyde-1-Dome-1",
+      "league": "Manchester",
+      "date": "2027-02-24T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 1",
+      "opposition": "Dome 1",
+      "homeOrAway": "home",
+      "competition": "Div2",
       "status": "outstanding",
       "homeScore": null,
       "awayScore": null,
@@ -1191,12 +1275,12 @@
       "result": ""
     },
     {
-      "id": "manchester-2027-03-18T19:00:00.000Z-Medlock-1-Hyde-2",
+      "id": "manchester-2027-03-17T19:00:00.000Z-Nomads-3-Hyde-2",
       "league": "Manchester",
-      "date": "2027-03-18T19:00:00.000Z",
+      "date": "2027-03-17T19:00:00.000Z",
       "season": "20262027",
       "team": "Hyde 2",
-      "opposition": "Medlock 1",
+      "opposition": "Nomads 3",
       "homeOrAway": "away",
       "competition": "Div3",
       "status": "outstanding",
@@ -1331,6 +1415,20 @@
       "result": ""
     },
     {
+      "id": "manchester-2027-04-14T19:00:00.000Z-Hyde-2-GZD-1",
+      "league": "Manchester",
+      "date": "2027-04-14T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "GZD 1",
+      "homeOrAway": "home",
+      "competition": "Div3",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
+    },
+    {
       "id": "tameside-6160",
       "league": "Tameside",
       "date": "2027-04-20T00:00:00.000Z",
@@ -1401,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-08-22T05:18:38.349Z"
+  "lastUpdated": "2026-08-23T05:20:31.140Z"
 }
