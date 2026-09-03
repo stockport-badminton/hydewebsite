@@ -291,19 +291,9 @@
       ],
       "rows": [
         {
-          "isHyde": true,
-          "values": [
-            "Hyde B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
           "isHyde": false,
           "values": [
-            "Shell A",
+            "Manchester Edgeley A",
             "0",
             "0",
             "0",
@@ -323,7 +313,7 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley A",
+            "Syddal Park A",
             "0",
             "0",
             "0",
@@ -333,7 +323,7 @@
         {
           "isHyde": true,
           "values": [
-            "Hyde A",
+            "Hyde B",
             "0",
             "0",
             "0",
@@ -343,7 +333,7 @@
         {
           "isHyde": false,
           "values": [
-            "Syddal Park A",
+            "GHAP B",
             "0",
             "0",
             "0",
@@ -363,7 +353,17 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
+            "Shell A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "Hyde A",
             "0",
             "0",
             "0",
@@ -400,7 +400,27 @@
         {
           "isHyde": false,
           "values": [
+            "Aerospace B",
+            "1",
+            "16",
+            "2",
+            "16"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Mellor A",
+            "1",
+            "2",
+            "16",
+            "2"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Mellor B",
             "0",
             "0",
             "0",
@@ -410,27 +430,7 @@
         {
           "isHyde": false,
           "values": [
-            "Manor A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Medlock A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Alderley Park TS",
+            "Disley A",
             "0",
             "0",
             "0",
@@ -450,26 +450,6 @@
         {
           "isHyde": false,
           "values": [
-            "Disley A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Mellor B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "College Green B",
             "0",
             "0",
@@ -480,7 +460,27 @@
         {
           "isHyde": false,
           "values": [
-            "Aerospace B",
+            "Alderley Park TS",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Medlock A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Manor A",
             "0",
             "0",
             "0",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-02T09:11:49.149Z"
+  "lastUpdated": "2026-09-03T09:18:28.500Z"
 }
