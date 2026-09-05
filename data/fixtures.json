@@ -415,10 +415,10 @@
       "opposition": "Disley A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 13,
+      "awayScore": 5,
+      "result": "13 - 5"
     },
     {
       "id": "manchester-2026-09-02T19:00:00.000Z-Nomads-2-Hyde-1",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-04T09:15:12.875Z"
+  "lastUpdated": "2026-09-05T08:42:39.355Z"
 }

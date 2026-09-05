@@ -293,7 +293,7 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley A",
+            "College Green A",
             "0",
             "0",
             "0",
@@ -303,7 +303,7 @@
         {
           "isHyde": false,
           "values": [
-            "College Green A",
+            "GHAP B",
             "0",
             "0",
             "0",
@@ -333,7 +333,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
+            "GHAP A",
             "0",
             "0",
             "0",
@@ -341,9 +341,9 @@
           ]
         },
         {
-          "isHyde": false,
+          "isHyde": true,
           "values": [
-            "GHAP A",
+            "Hyde A",
             "0",
             "0",
             "0",
@@ -361,9 +361,9 @@
           ]
         },
         {
-          "isHyde": true,
+          "isHyde": false,
           "values": [
-            "Hyde A",
+            "Manchester Edgeley A",
             "0",
             "0",
             "0",
@@ -410,6 +410,26 @@
         {
           "isHyde": false,
           "values": [
+            "Disley A",
+            "1",
+            "13",
+            "5",
+            "13"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "Hyde C",
+            "1",
+            "5",
+            "13",
+            "5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Mellor A",
             "1",
             "2",
@@ -421,46 +441,6 @@
           "isHyde": false,
           "values": [
             "Mellor B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Disley A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "Hyde C",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "College Green B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Alderley Park TS",
             "0",
             "0",
             "0",
@@ -486,9 +466,29 @@
             "0",
             "0"
           ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "College Green B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Alderley Park TS",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-09-04T09:15:13.858Z"
+  "lastUpdated": "2026-09-05T08:42:40.636Z"
 }
