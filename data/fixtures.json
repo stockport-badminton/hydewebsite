@@ -429,10 +429,10 @@
       "opposition": "Nomads 2",
       "homeOrAway": "away",
       "competition": "Div2",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 15,
+      "awayScore": 3,
+      "result": "15 - 3"
     },
     {
       "id": "tameside-6039",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-05T08:42:39.355Z"
+  "lastUpdated": "2026-09-06T09:03:47.671Z"
 }

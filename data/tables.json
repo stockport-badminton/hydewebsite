@@ -22,6 +22,32 @@
           "isHyde": false,
           "values": [
             "1",
+            "Nomads 2",
+            "1",
+            "1",
+            "0",
+            "0",
+            "15.0",
+            "17"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "2",
+            "Hyde 1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "3.0",
+            "3"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "3",
             "ACE 2",
             "0",
             "0",
@@ -34,7 +60,7 @@
         {
           "isHyde": false,
           "values": [
-            "2",
+            "4",
             "Dome 1",
             "0",
             "0",
@@ -47,7 +73,7 @@
         {
           "isHyde": false,
           "values": [
-            "3",
+            "5",
             "Featherstorm",
             "0",
             "0",
@@ -60,34 +86,8 @@
         {
           "isHyde": false,
           "values": [
-            "4",
-            "Forest",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "5",
-            "Hyde 1",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "6",
-            "Manchester Edgeley C",
+            "Forest",
             "0",
             "0",
             "0",
@@ -100,7 +100,7 @@
           "isHyde": false,
           "values": [
             "7",
-            "MTB 2",
+            "Manchester Edgeley C",
             "0",
             "0",
             "0",
@@ -113,7 +113,7 @@
           "isHyde": false,
           "values": [
             "8",
-            "Nomads 2",
+            "MTB 2",
             "0",
             "0",
             "0",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-05T08:42:40.636Z"
+  "lastUpdated": "2026-09-06T09:03:48.932Z"
 }
