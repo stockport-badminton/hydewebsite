@@ -293,21 +293,21 @@
         {
           "isHyde": false,
           "values": [
-            "College Green A",
-            "0",
-            "0",
-            "0",
-            "0"
+            "Manchester Edgeley A",
+            "1",
+            "13",
+            "5",
+            "13"
           ]
         },
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
-            "0",
-            "0",
-            "0",
-            "0"
+            "College Green A",
+            "1",
+            "5",
+            "13",
+            "5"
           ]
         },
         {
@@ -341,16 +341,6 @@
           ]
         },
         {
-          "isHyde": true,
-          "values": [
-            "Hyde A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
           "isHyde": false,
           "values": [
             "Shell A",
@@ -363,7 +353,17 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley A",
+            "Manchester Edgeley B",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": true,
+          "values": [
+            "Hyde A",
             "0",
             "0",
             "0",
@@ -373,7 +373,7 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley B",
+            "GHAP B",
             "0",
             "0",
             "0",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-06T09:03:48.932Z"
+  "lastUpdated": "2026-09-07T09:50:42.676Z"
 }
