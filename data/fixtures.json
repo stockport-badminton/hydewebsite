@@ -443,10 +443,10 @@
       "opposition": "Syddal Park A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 15,
+      "awayScore": 3,
+      "result": "15 - 3"
     },
     {
       "id": "manchester-2026-09-09T19:00:00.000Z-Hyde-2-Medlock-1",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-08T09:15:10.370Z"
+  "lastUpdated": "2026-09-09T09:18:22.648Z"
 }
