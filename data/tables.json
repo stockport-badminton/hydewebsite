@@ -279,8 +279,8 @@
       "league": "Tameside",
       "name": "Division 1",
       "hydeTeams": [
-        "Hyde B",
-        "Hyde A"
+        "Hyde A",
+        "Hyde B"
       ],
       "columns": [
         "Team",
@@ -303,6 +303,16 @@
         {
           "isHyde": false,
           "values": [
+            "College Green A",
+            "2",
+            "15",
+            "21",
+            "7.5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Manchester Edgeley A",
             "1",
             "13",
@@ -311,13 +321,13 @@
           ]
         },
         {
-          "isHyde": false,
+          "isHyde": true,
           "values": [
-            "College Green A",
+            "Hyde A",
             "1",
-            "5",
-            "13",
-            "5"
+            "8",
+            "10",
+            "8"
           ]
         },
         {
@@ -333,7 +343,7 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley B",
+            "GHAP A",
             "0",
             "0",
             "0",
@@ -341,9 +351,9 @@
           ]
         },
         {
-          "isHyde": true,
+          "isHyde": false,
           "values": [
-            "Hyde A",
+            "Shell A",
             "0",
             "0",
             "0",
@@ -363,17 +373,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Shell A",
+            "Manchester Edgeley B",
             "0",
             "0",
             "0",
@@ -410,11 +410,21 @@
         {
           "isHyde": false,
           "values": [
-            "Disley A",
+            "Manor A",
             "1",
-            "13",
-            "5",
-            "13"
+            "16",
+            "2",
+            "16"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Disley A",
+            "2",
+            "15",
+            "21",
+            "7.5"
           ]
         },
         {
@@ -450,26 +460,6 @@
         {
           "isHyde": false,
           "values": [
-            "Medlock A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Manor A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "College Green B",
             "0",
             "0",
@@ -486,9 +476,19 @@
             "0",
             "0"
           ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Medlock A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-09-10T09:17:12.217Z"
+  "lastUpdated": "2026-09-11T09:16:08.080Z"
 }
