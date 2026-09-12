@@ -343,16 +343,6 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "Shell A",
             "0",
             "0",
@@ -363,7 +353,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
+            "Manchester Edgeley B",
             "0",
             "0",
             "0",
@@ -373,7 +363,17 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley B",
+            "GHAP A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "GHAP B",
             "0",
             "0",
             "0",
@@ -401,6 +401,16 @@
           "isHyde": false,
           "values": [
             "Aerospace B",
+            "2",
+            "27",
+            "9",
+            "13.5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Alderley Park TS",
             "1",
             "16",
             "2",
@@ -428,6 +438,16 @@
           ]
         },
         {
+          "isHyde": false,
+          "values": [
+            "Medlock A",
+            "1",
+            "7",
+            "11",
+            "7"
+          ]
+        },
+        {
           "isHyde": true,
           "values": [
             "Hyde C",
@@ -435,6 +455,16 @@
             "5",
             "13",
             "5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Mellor B",
+            "1",
+            "2",
+            "16",
+            "2"
           ]
         },
         {
@@ -450,37 +480,7 @@
         {
           "isHyde": false,
           "values": [
-            "Mellor B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "College Green B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Alderley Park TS",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Medlock A",
             "0",
             "0",
             "0",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-11T09:16:08.080Z"
+  "lastUpdated": "2026-09-12T08:56:28.107Z"
 }
