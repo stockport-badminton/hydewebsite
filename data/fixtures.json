@@ -457,10 +457,10 @@
       "opposition": "Medlock 1",
       "homeOrAway": "home",
       "competition": "Div3",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 2,
+      "awayScore": 16,
+      "result": "2 - 16"
     },
     {
       "id": "tameside-6044",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-12T08:56:26.935Z"
+  "lastUpdated": "2026-09-13T09:53:32.399Z"
 }
