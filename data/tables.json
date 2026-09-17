@@ -343,7 +343,7 @@
         {
           "isHyde": false,
           "values": [
-            "Shell A",
+            "GHAP A",
             "0",
             "0",
             "0",
@@ -363,7 +363,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP A",
+            "Shell A",
             "0",
             "0",
             "0",
@@ -410,11 +410,21 @@
         {
           "isHyde": false,
           "values": [
-            "Alderley Park TS",
-            "1",
-            "16",
+            "Mellor A",
             "2",
-            "16"
+            "18",
+            "18",
+            "9"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Disley A",
+            "3",
+            "17",
+            "37",
+            "5.7"
           ]
         },
         {
@@ -430,11 +440,11 @@
         {
           "isHyde": false,
           "values": [
-            "Disley A",
+            "Alderley Park TS",
+            "1",
+            "16",
             "2",
-            "15",
-            "21",
-            "7.5"
+            "16"
           ]
         },
         {
@@ -470,16 +480,6 @@
         {
           "isHyde": false,
           "values": [
-            "Mellor A",
-            "1",
-            "2",
-            "16",
-            "2"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "College Green B",
             "0",
             "0",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-16T09:35:56.656Z"
+  "lastUpdated": "2026-09-17T09:44:18.307Z"
 }
