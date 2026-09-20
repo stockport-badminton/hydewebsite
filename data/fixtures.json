@@ -485,10 +485,10 @@
       "opposition": "Alderley Park TS",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 13,
+      "awayScore": 5,
+      "result": "13 - 5"
     },
     {
       "id": "manchester-2026-09-16T19:00:00.000Z-Hyde-1-Roe-Green-1",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-19T09:04:55.025Z"
+  "lastUpdated": "2026-09-20T09:31:33.712Z"
 }

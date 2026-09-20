@@ -343,7 +343,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP A",
+            "Shell A",
             "0",
             "0",
             "0",
@@ -363,7 +363,7 @@
         {
           "isHyde": false,
           "values": [
-            "Shell A",
+            "GHAP A",
             "0",
             "0",
             "0",
@@ -397,6 +397,16 @@
         "Avg"
       ],
       "rows": [
+        {
+          "isHyde": false,
+          "values": [
+            "Alderley Park TS",
+            "2",
+            "29",
+            "7",
+            "14.5"
+          ]
+        },
         {
           "isHyde": false,
           "values": [
@@ -438,13 +448,13 @@
           ]
         },
         {
-          "isHyde": false,
+          "isHyde": true,
           "values": [
-            "Alderley Park TS",
-            "1",
-            "16",
+            "Hyde C",
             "2",
-            "16"
+            "10",
+            "26",
+            "5"
           ]
         },
         {
@@ -455,16 +465,6 @@
             "7",
             "11",
             "7"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "Hyde C",
-            "1",
-            "5",
-            "13",
-            "5"
           ]
         },
         {
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-19T09:04:56.316Z"
+  "lastUpdated": "2026-09-20T09:31:34.736Z"
 }
