@@ -1,280 +1,6 @@
 {
   "divisions": [
     {
-      "id": "manchester-division-2",
-      "league": "Manchester",
-      "name": "Division 2",
-      "hydeTeams": [
-        "Hyde 1"
-      ],
-      "columns": [
-        "Pos",
-        "Team",
-        "Played",
-        "Won",
-        "Drawn",
-        "Lost",
-        "Games/Match",
-        "Total Points"
-      ],
-      "rows": [
-        {
-          "isHyde": false,
-          "values": [
-            "1",
-            "Nomads 2",
-            "2",
-            "1",
-            "1",
-            "0",
-            "12.0",
-            "27"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "2",
-            "Featherstorm",
-            "1",
-            "1",
-            "0",
-            "0",
-            "18.0",
-            "20"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "3",
-            "Hyde 1",
-            "2",
-            "1",
-            "0",
-            "1",
-            "6.5",
-            "15"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "4",
-            "ACE 2",
-            "1",
-            "0",
-            "1",
-            "0",
-            "9.0",
-            "10"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "5",
-            "Roe Green 1",
-            "2",
-            "0",
-            "0",
-            "2",
-            "4.0",
-            "8"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "6",
-            "Dome 1",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "7",
-            "Forest",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "8",
-            "Manchester Edgeley C",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "9",
-            "MTB 2",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "manchester-division-3",
-      "league": "Manchester",
-      "name": "Division 3",
-      "hydeTeams": [
-        "Hyde 2"
-      ],
-      "columns": [
-        "Pos",
-        "Team",
-        "Played",
-        "Won",
-        "Drawn",
-        "Lost",
-        "Games/Match",
-        "Total Points"
-      ],
-      "rows": [
-        {
-          "isHyde": false,
-          "values": [
-            "1",
-            "Medlock 1",
-            "1",
-            "1",
-            "0",
-            "0",
-            "16.0",
-            "18"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "2",
-            "Nettles 1",
-            "1",
-            "0",
-            "1",
-            "0",
-            "9.0",
-            "10"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "3",
-            "Cheadle Hulme 1",
-            "1",
-            "0",
-            "1",
-            "0",
-            "9.0",
-            "10"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "4",
-            "Hyde 2",
-            "1",
-            "0",
-            "0",
-            "1",
-            "2.0",
-            "2"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "5",
-            "Blue Triangle 1",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "6",
-            "GZD 1",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "7",
-            "Heys A",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "8",
-            "Nomads 3",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "9",
-            "Silver Feather 1",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        }
-      ]
-    },
-    {
       "id": "tameside-division-1",
       "league": "Tameside",
       "name": "Division 1",
@@ -321,6 +47,16 @@
           ]
         },
         {
+          "isHyde": false,
+          "values": [
+            "Manchester Edgeley B",
+            "1",
+            "13",
+            "5",
+            "13"
+          ]
+        },
+        {
           "isHyde": true,
           "values": [
             "Hyde A",
@@ -328,6 +64,16 @@
             "8",
             "10",
             "8"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Shell A",
+            "1",
+            "5",
+            "13",
+            "5"
           ]
         },
         {
@@ -343,37 +89,17 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Shell A",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Manchester Edgeley B",
-            "0",
-            "0",
-            "0",
-            "0"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "GHAP A",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "GHAP B",
             "0",
             "0",
             "0",
@@ -490,5 +216,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-25T09:55:31.218Z"
+  "lastUpdated": "2026-09-26T09:37:59.827Z"
 }
