@@ -527,10 +527,10 @@
       "opposition": "Forest",
       "homeOrAway": "home",
       "competition": "Div2",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 9,
+      "awayScore": 9,
+      "result": "9 - 9"
     },
     {
       "id": "manchester-2026-09-29T19:00:00.000Z-ACE-2-Hyde-1",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-27T10:17:12.300Z"
+  "lastUpdated": "2026-09-28T11:20:15.649Z"
 }
