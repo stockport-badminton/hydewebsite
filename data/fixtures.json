@@ -513,10 +513,10 @@
       "opposition": "College Green A",
       "homeOrAway": "home",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 1,
+      "awayScore": 17,
+      "result": "1 - 17"
     },
     {
       "id": "manchester-2026-09-23T19:00:00.000Z-Hyde-1-Forest",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-09-30T10:49:15.875Z"
+  "lastUpdated": "2026-10-01T11:15:57.381Z"
 }
