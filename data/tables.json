@@ -313,6 +313,16 @@
         {
           "isHyde": false,
           "values": [
+            "Shell A",
+            "2",
+            "19",
+            "17",
+            "9.5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Syddal Park A",
             "2",
             "18",
@@ -361,23 +371,13 @@
           ]
         },
         {
-          "isHyde": false,
-          "values": [
-            "Shell A",
-            "1",
-            "5",
-            "13",
-            "5"
-          ]
-        },
-        {
           "isHyde": true,
           "values": [
             "Hyde B",
-            "2",
-            "4",
-            "32",
-            "2"
+            "3",
+            "8",
+            "46",
+            "2.7"
           ]
         }
       ]
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-01T11:15:58.594Z"
+  "lastUpdated": "2026-10-02T10:48:14.449Z"
 }

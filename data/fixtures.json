@@ -555,10 +555,10 @@
       "opposition": "Shell A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 14,
+      "awayScore": 4,
+      "result": "14 - 4"
     },
     {
       "id": "tameside-6056",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-10-01T11:15:57.381Z"
+  "lastUpdated": "2026-10-02T10:48:13.398Z"
 }
