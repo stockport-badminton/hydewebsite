@@ -541,10 +541,10 @@
       "opposition": "ACE 2",
       "homeOrAway": "away",
       "competition": "Div2",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 13,
+      "awayScore": 5,
+      "result": "13 - 5"
     },
     {
       "id": "tameside-6147",
@@ -569,10 +569,10 @@
       "opposition": "Medlock A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 13,
+      "awayScore": 5,
+      "result": "13 - 5"
     },
     {
       "id": "tameside-6059",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-10-04T10:48:51.026Z"
+  "lastUpdated": "2026-10-05T11:56:36.683Z"
 }
