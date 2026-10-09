@@ -279,8 +279,8 @@
       "league": "Tameside",
       "name": "Division 1",
       "hydeTeams": [
-        "Hyde A",
-        "Hyde B"
+        "Hyde B",
+        "Hyde A"
       ],
       "columns": [
         "Team",
@@ -313,6 +313,26 @@
         {
           "isHyde": false,
           "values": [
+            "GHAP B",
+            "3",
+            "28",
+            "26",
+            "9.3"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "GHAP A",
+            "2",
+            "27",
+            "9",
+            "13.5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Shell A",
             "2",
             "19",
@@ -333,7 +353,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
+            "Manchester Edgeley B",
             "2",
             "15",
             "21",
@@ -341,23 +361,13 @@
           ]
         },
         {
-          "isHyde": false,
+          "isHyde": true,
           "values": [
-            "Manchester Edgeley B",
-            "1",
+            "Hyde B",
+            "4",
             "13",
-            "5",
-            "13"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "GHAP A",
-            "1",
-            "11",
-            "7",
-            "11"
+            "59",
+            "3.3"
           ]
         },
         {
@@ -368,16 +378,6 @@
             "8",
             "10",
             "8"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "Hyde B",
-            "3",
-            "8",
-            "46",
-            "2.7"
           ]
         }
       ]
@@ -430,6 +430,16 @@
         {
           "isHyde": false,
           "values": [
+            "Disley A",
+            "5",
+            "27",
+            "63",
+            "5.4"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Medlock A",
             "3",
             "21",
@@ -448,16 +458,6 @@
           ]
         },
         {
-          "isHyde": false,
-          "values": [
-            "Disley A",
-            "4",
-            "18",
-            "54",
-            "4.5"
-          ]
-        },
-        {
           "isHyde": true,
           "values": [
             "Hyde C",
@@ -471,10 +471,10 @@
           "isHyde": false,
           "values": [
             "Mellor B",
-            "2",
-            "2",
-            "34",
-            "1"
+            "3",
+            "11",
+            "43",
+            "3.7"
           ]
         },
         {
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-08T11:41:37.733Z"
+  "lastUpdated": "2026-10-09T11:34:56.197Z"
 }
