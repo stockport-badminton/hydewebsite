@@ -293,21 +293,21 @@
         {
           "isHyde": false,
           "values": [
-            "Manchester Edgeley A",
-            "3",
-            "38",
-            "16",
-            "12.7"
+            "College Green A",
+            "4",
+            "45",
+            "27",
+            "11.3"
           ]
         },
         {
           "isHyde": false,
           "values": [
-            "College Green A",
+            "Manchester Edgeley A",
             "3",
-            "32",
-            "22",
-            "10.7"
+            "38",
+            "16",
+            "12.7"
           ]
         },
         {
@@ -333,21 +333,21 @@
         {
           "isHyde": false,
           "values": [
-            "Shell A",
-            "2",
-            "19",
-            "17",
-            "9.5"
+            "Syddal Park A",
+            "3",
+            "23",
+            "31",
+            "7.7"
           ]
         },
         {
           "isHyde": false,
           "values": [
-            "Syddal Park A",
+            "Shell A",
             "2",
-            "18",
-            "18",
-            "9"
+            "19",
+            "17",
+            "9.5"
           ]
         },
         {
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-09T11:34:56.197Z"
+  "lastUpdated": "2026-10-10T10:52:51.247Z"
 }
