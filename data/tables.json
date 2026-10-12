@@ -440,21 +440,21 @@
         {
           "isHyde": false,
           "values": [
-            "Medlock A",
+            "Mellor A",
             "3",
-            "21",
-            "33",
-            "7"
+            "26",
+            "28",
+            "8.7"
           ]
         },
         {
           "isHyde": false,
           "values": [
-            "Mellor A",
-            "2",
-            "18",
-            "18",
-            "9"
+            "Medlock A",
+            "3",
+            "21",
+            "33",
+            "7"
           ]
         },
         {
@@ -481,14 +481,14 @@
           "isHyde": false,
           "values": [
             "College Green B",
-            "0",
-            "0",
-            "0",
-            "0"
+            "1",
+            "10",
+            "8",
+            "10"
           ]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-10-11T11:06:31.166Z"
+  "lastUpdated": "2026-10-12T12:35:24.403Z"
 }
