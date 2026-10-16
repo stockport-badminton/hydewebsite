@@ -597,10 +597,10 @@
       "opposition": "Mellor A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 11,
+      "awayScore": 7,
+      "result": "11 - 7"
     },
     {
       "id": "manchester-2026-10-14T19:00:00.000Z-Hyde-2-Blue-Triangle-1",
@@ -625,10 +625,10 @@
       "opposition": "College Green A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 17,
+      "awayScore": 1,
+      "result": "17 - 1"
     },
     {
       "id": "manchester-2026-10-20T19:00:00.000Z-Nettles-1-Hyde-2",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-10-15T09:31:17.329Z"
+  "lastUpdated": "2026-10-16T09:24:06.357Z"
 }
