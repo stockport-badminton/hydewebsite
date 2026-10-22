@@ -279,8 +279,8 @@
       "league": "Tameside",
       "name": "Division 1",
       "hydeTeams": [
-        "Hyde B",
-        "Hyde A"
+        "Hyde A",
+        "Hyde B"
       ],
       "columns": [
         "Team",
@@ -323,6 +323,16 @@
         {
           "isHyde": false,
           "values": [
+            "Syddal Park A",
+            "4",
+            "30",
+            "42",
+            "7.5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "GHAP B",
             "4",
             "28",
@@ -351,13 +361,13 @@
           ]
         },
         {
-          "isHyde": false,
+          "isHyde": true,
           "values": [
-            "Syddal Park A",
-            "3",
-            "23",
-            "31",
-            "7.7"
+            "Hyde A",
+            "2",
+            "19",
+            "17",
+            "9.5"
           ]
         },
         {
@@ -368,16 +378,6 @@
             "14",
             "76",
             "2.8"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "Hyde A",
-            "1",
-            "8",
-            "10",
-            "8"
           ]
         }
       ]
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-21T09:44:58.731Z"
+  "lastUpdated": "2026-10-22T09:44:25.490Z"
 }

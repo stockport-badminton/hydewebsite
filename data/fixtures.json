@@ -653,10 +653,10 @@
       "opposition": "Syddal Park A",
       "homeOrAway": "home",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 11,
+      "awayScore": 7,
+      "result": "11 - 7"
     },
     {
       "id": "manchester-2026-10-21T19:00:00.000Z-Cheadle-Hulme-1-Hyde-2",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-10-21T09:44:57.619Z"
+  "lastUpdated": "2026-10-22T09:44:24.493Z"
 }
