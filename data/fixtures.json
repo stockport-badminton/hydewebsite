@@ -695,10 +695,10 @@
       "opposition": "GHAP A",
       "homeOrAway": "home",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 1,
+      "awayScore": 17,
+      "result": "1 - 17"
     },
     {
       "id": "tameside-6076",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-10-30T11:06:09.001Z"
+  "lastUpdated": "2026-10-31T10:40:06.391Z"
 }

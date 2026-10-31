@@ -313,6 +313,16 @@
         {
           "isHyde": false,
           "values": [
+            "GHAP A",
+            "3",
+            "44",
+            "10",
+            "14.7"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Manchester Edgeley B",
             "4",
             "33",
@@ -343,16 +353,6 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP A",
-            "2",
-            "27",
-            "9",
-            "13.5"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "Shell A",
             "3",
             "25",
@@ -374,10 +374,10 @@
           "isHyde": true,
           "values": [
             "Hyde B",
-            "5",
-            "14",
-            "76",
-            "2.8"
+            "6",
+            "15",
+            "93",
+            "2.5"
           ]
         }
       ]
@@ -440,6 +440,26 @@
         {
           "isHyde": false,
           "values": [
+            "College Green B",
+            "3",
+            "30",
+            "24",
+            "10"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "Medlock A",
+            "4",
+            "30",
+            "42",
+            "7.5"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Disley A",
             "5",
             "27",
@@ -460,26 +480,6 @@
         {
           "isHyde": false,
           "values": [
-            "College Green B",
-            "2",
-            "21",
-            "15",
-            "10.5"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Medlock A",
-            "3",
-            "21",
-            "33",
-            "7"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "Mellor B",
             "4",
             "13",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-30T11:06:10.274Z"
+  "lastUpdated": "2026-10-31T10:40:07.790Z"
 }
