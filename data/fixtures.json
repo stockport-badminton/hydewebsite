@@ -709,10 +709,10 @@
       "opposition": "Alderley Park TS",
       "homeOrAway": "home",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 6,
+      "awayScore": 12,
+      "result": "6 - 12"
     },
     {
       "id": "manchester-2026-11-04T19:00:00.000Z-Manchester-Edgeley-C-Hyde-1",
@@ -1499,5 +1499,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-11-05T12:51:06.288Z"
+  "lastUpdated": "2026-11-06T12:35:54.354Z"
 }

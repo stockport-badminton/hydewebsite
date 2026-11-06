@@ -410,6 +410,16 @@
         {
           "isHyde": false,
           "values": [
+            "Alderley Park TS",
+            "5",
+            "65",
+            "25",
+            "13"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Manor A",
             "4",
             "59",
@@ -425,16 +435,6 @@
             "55",
             "35",
             "11"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Alderley Park TS",
-            "4",
-            "53",
-            "19",
-            "13.3"
           ]
         },
         {
@@ -458,6 +458,16 @@
           ]
         },
         {
+          "isHyde": true,
+          "values": [
+            "Hyde C",
+            "5",
+            "28",
+            "62",
+            "5.6"
+          ]
+        },
+        {
           "isHyde": false,
           "values": [
             "Disley A",
@@ -465,16 +475,6 @@
             "27",
             "63",
             "5.4"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
-            "Hyde C",
-            "4",
-            "22",
-            "50",
-            "5.5"
           ]
         },
         {
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-11-05T12:51:07.139Z"
+  "lastUpdated": "2026-11-06T12:35:55.319Z"
 }
