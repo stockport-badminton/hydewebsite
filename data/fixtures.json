@@ -603,20 +603,6 @@
       "result": "11 - 7"
     },
     {
-      "id": "manchester-2026-10-14T19:00:00.000Z-Hyde-2-Blue-Triangle-1",
-      "league": "Manchester",
-      "date": "2026-10-14T19:00:00.000Z",
-      "season": "20262027",
-      "team": "Hyde 2",
-      "opposition": "Blue Triangle 1",
-      "homeOrAway": "home",
-      "competition": "Div3",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
-    },
-    {
       "id": "tameside-6064",
       "league": "Tameside",
       "date": "2026-10-15T00:00:00.000Z",
@@ -639,10 +625,10 @@
       "opposition": "Nettles 1",
       "homeOrAway": "away",
       "competition": "Div3",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 13,
+      "awayScore": 5,
+      "result": "13 - 5"
     },
     {
       "id": "tameside-6067",
@@ -667,10 +653,10 @@
       "opposition": "Cheadle Hulme 1",
       "homeOrAway": "away",
       "competition": "Div3",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 11,
+      "awayScore": 7,
+      "result": "11 - 7"
     },
     {
       "id": "manchester-2026-10-27T19:00:00.000Z-Silver-Feather-1-Hyde-2",
@@ -681,10 +667,10 @@
       "opposition": "Silver Feather 1",
       "homeOrAway": "away",
       "competition": "Div3",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 15,
+      "awayScore": 3,
+      "result": "15 - 3"
     },
     {
       "id": "tameside-6071",
@@ -723,10 +709,10 @@
       "opposition": "Manchester Edgeley C",
       "homeOrAway": "away",
       "competition": "Div2",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 14,
+      "awayScore": 4,
+      "result": "14 - 4"
     },
     {
       "id": "tameside-6078",
@@ -1497,7 +1483,21 @@
       "homeScore": null,
       "awayScore": null,
       "result": ""
+    },
+    {
+      "id": "manchester-2027-05-05T19:00:00.000Z-Hyde-2-Blue-Triangle-1",
+      "league": "Manchester",
+      "date": "2027-05-05T19:00:00.000Z",
+      "season": "20262027",
+      "team": "Hyde 2",
+      "opposition": "Blue Triangle 1",
+      "homeOrAway": "home",
+      "competition": "Div3",
+      "status": "outstanding",
+      "homeScore": null,
+      "awayScore": null,
+      "result": ""
     }
   ],
-  "lastUpdated": "2026-11-08T11:36:52.588Z"
+  "lastUpdated": "2026-11-09T13:29:17.169Z"
 }
