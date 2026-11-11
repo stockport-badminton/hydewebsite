@@ -314,10 +314,10 @@
           "isHyde": false,
           "values": [
             "GHAP A",
-            "3",
-            "44",
-            "10",
-            "14.7"
+            "4",
+            "60",
+            "12",
+            "15"
           ]
         },
         {
@@ -344,10 +344,10 @@
           "isHyde": false,
           "values": [
             "GHAP B",
-            "4",
-            "28",
-            "44",
-            "7"
+            "5",
+            "30",
+            "60",
+            "6"
           ]
         },
         {
@@ -440,21 +440,31 @@
         {
           "isHyde": false,
           "values": [
-            "College Green B",
-            "3",
-            "30",
-            "24",
-            "10"
+            "Medlock A",
+            "5",
+            "44",
+            "46",
+            "8.8"
           ]
         },
         {
           "isHyde": false,
           "values": [
-            "Medlock A",
-            "4",
+            "Disley A",
+            "6",
+            "31",
+            "77",
+            "5.2"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
+            "College Green B",
+            "3",
             "30",
-            "42",
-            "7.5"
+            "24",
+            "10"
           ]
         },
         {
@@ -470,16 +480,6 @@
         {
           "isHyde": false,
           "values": [
-            "Disley A",
-            "5",
-            "27",
-            "63",
-            "5.4"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
             "Mellor B",
             "5",
             "16",
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-11-10T13:08:17.570Z"
+  "lastUpdated": "2026-11-11T12:17:34.475Z"
 }
