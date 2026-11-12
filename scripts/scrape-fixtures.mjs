@@ -30,13 +30,47 @@ const TAMESIDE_URL = 'https://tameside-badminton.co.uk/fixtures/club-Hyde';
 
 // ── Manchester (HTML scrape) ─────────────────────────────────────────────────
 
+// Manchester publishes dates only (no start time). Each fixture is stamped at
+// 19:00 *UTC* on its date — explicitly UTC so the timestamp, and therefore the
+// fixture id built from it, is the same whichever timezone the scraper runs in.
+// (It used to use local time, so a run on a UK laptop in BST produced 18:00Z
+// ids while the UTC CI runner produced 19:00Z, and archiveAndMerge kept both.)
+// Only the calendar date is meaningful; nothing displays the time.
+function manchesterDateIso(year, month, day) {
+  return new Date(Date.UTC(year, month - 1, day, 19, 0, 0)).toISOString();
+}
+
+function manchesterId(date, homeTeam, awayTeam) {
+  return `manchester-${date}-${homeTeam.replace(/\s+/g, '-')}-${awayTeam.replace(/\s+/g, '-')}`;
+}
+
 function parseManchesterDate(raw) {
   // Raw format: "DD/MM/YYYY"
   const parts = raw.trim().split('/');
   if (parts.length !== 3) return null;
   const [day, month, year] = parts.map((p) => parseInt(p, 10));
   if (!day || !month || !year) return null;
-  return new Date(year, month - 1, day, 19, 0, 0).toISOString();
+  return manchesterDateIso(year, month, day);
+}
+
+// Repairs archived Manchester fixtures written before the UTC fix: re-stamps
+// each at 19:00Z on its UK calendar date, rebuilds the id, and drops the
+// duplicates that leaves (keeping the first, i.e. the CI-produced copy when
+// sorted by date, which is identical apart from the id).
+const ukDateParts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London' });
+function normaliseManchester(fixtures) {
+  const seen = new Set();
+  const out = [];
+  for (const f of fixtures) {
+    const [y, m, d] = ukDateParts.format(new Date(f.date)).split('-').map(Number);
+    const date = manchesterDateIso(y, m, d);
+    const [homeTeam, awayTeam] = f.homeOrAway === 'home' ? [f.team, f.opposition] : [f.opposition, f.team];
+    const id = manchesterId(date, homeTeam, awayTeam);
+    if (seen.has(id)) continue;
+    seen.add(id);
+    out.push({ ...f, id, date });
+  }
+  return out;
 }
 
 async function fetchManchester() {
@@ -74,7 +108,7 @@ async function fetchManchester() {
     const awayScore = played ? parseInt(scoreMatch[2], 10) : null;
 
     fixtures.push({
-      id: `manchester-${date}-${homeTeam.replace(/\s+/g, '-')}-${awayTeam.replace(/\s+/g, '-')}`,
+      id: manchesterId(date, homeTeam, awayTeam),
       league: 'Manchester',
       date,
       season: computeSeason(date),
@@ -163,7 +197,7 @@ async function main() {
     // First run
   }
 
-  const existingManchester = existing.fixtures.filter((f) => f.id.startsWith('manchester-'));
+  const existingManchester = normaliseManchester(existing.fixtures.filter((f) => f.id.startsWith('manchester-')));
   const existingTameside = existing.fixtures.filter((f) => f.id.startsWith('tameside-'));
 
   let manchesterFixtures = existingManchester;

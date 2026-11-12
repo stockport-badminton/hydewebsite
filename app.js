@@ -5,6 +5,7 @@ const path = require('path')
 const pagesRouter = require('./routes/pages')
 const fixturesRouter = require('./routes/fixtures')
 const tablesRouter = require('./routes/tables')
+const pushRouter = require('./routes/push')
 
 const app = express()
 app.use('/static', express.static(path.join(__dirname, '/static')));
@@ -19,6 +20,11 @@ const { css: compiledCss } = sass.compile(path.join(__dirname, 'styles/main.scss
 })
 app.get('/public/style.css', (req, res) => res.type('css').send(compiledCss));
 
+// The service worker is only registered on App Engine (GAE_ENV is set there)
+// or when ENABLE_SW=1 — locally it would cache pages and confuse nodemon dev.
+app.locals.enableServiceWorker = Boolean(process.env.GAE_ENV) || process.env.ENABLE_SW === '1';
+
+app.use(pushRouter)
 app.use(pagesRouter)
 app.use(fixturesRouter)
 app.use(tablesRouter)

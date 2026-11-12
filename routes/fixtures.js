@@ -1,36 +1,14 @@
 const express = require('express');
 const { computeSeason, seasonLabel } = require('../lib/season');
+const { getFixtures } = require('../lib/fixtures-data');
+const { outcomeFor } = require('../lib/hyde');
 
 const router = express.Router();
 
-// Fixtures are scraped out-of-band by scripts/scrape-fixtures.mjs (run on a
-// schedule via GitHub Actions) and committed to data/fixtures.json. The app
-// just reads that file's raw GitHub URL instead of live-scraping the league
-// sites on every request — keeps the request path immune to the leagues'
-// sites changing markup or returning something unparseable.
-const FIXTURES_JSON_URL = process.env.FIXTURES_JSON_URL || 'https://raw.githubusercontent.com/stockport-badminton/hydewebsite/main/data/fixtures.json';
-const CACHE_TTL_MS = 10 * 60 * 1000;
-let cache = { fixtures: null, fetchedAt: 0 };
-
-async function getFixtures() {
-  const isFresh = cache.fixtures && (Date.now() - cache.fetchedAt) < CACHE_TTL_MS;
-  if (isFresh) return cache.fixtures;
-  const response = await fetch(FIXTURES_JSON_URL);
-  if (!response.ok) throw new Error(`Fixtures fetch failed: ${response.status}`);
-  const { fixtures } = await response.json();
-  cache = { fixtures, fetchedAt: Date.now() };
-  return fixtures;
-}
+// Fixtures are scraped out-of-band by scripts/scrape-fixtures.mjs and read
+// from data/fixtures.json's raw GitHub URL; see lib/fixtures-data.js.
 
 const dayNames = Array.from({ length: 7 }, (_, i) => new Date(0, 0, i).toLocaleString('en-US', { weekday: 'short' }));
-
-function outcomeFor(fixture) {
-  if (fixture.status !== 'complete') return null;
-  const hydeScore = fixture.homeOrAway === 'home' ? fixture.homeScore : fixture.awayScore;
-  const oppScore = fixture.homeOrAway === 'home' ? fixture.awayScore : fixture.homeScore;
-  if (hydeScore === oppScore) return 'draw';
-  return hydeScore > oppScore ? 'win' : 'loss';
-}
 
 router.get('/fixtures/:team/:season?', async (req, res, next) => {
   try {

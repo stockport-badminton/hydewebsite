@@ -11,6 +11,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/fixtures/Hyde A">Fixtures &amp; Results</a></li>
             <li><a href="/tables">League Tables</a></li>
+            <li><a href="/notifications">Notifications</a></li>
             <li><a href="/contact-us">Contact Us</a></li>
           </ul>
         </div>
@@ -29,5 +30,14 @@
   </footer>
 
   <script type="module" src="/static/js/main.js"></script>
+  <% if (enableServiceWorker) { %>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch((err) => console.warn('SW registration failed', err));
+      });
+    }
+  </script>
+  <% } %>
   </body>
   </html>

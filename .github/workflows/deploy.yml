@@ -33,6 +33,8 @@ jobs:
           cat <<EOF > .env
           CONTENTFUL_SPACE=${{ secrets.CONTENTFUL_SPACE }}
           CONTENTFUL_TOKEN=${{ secrets.CONTENTFUL_TOKEN }}
+          VAPID_PRIVATE_KEY=${{ secrets.VAPID_PRIVATE_KEY }}
+          PUSH_SEND_SECRET=${{ secrets.PUSH_SEND_SECRET }}
           EOF
 
       - name: Deploy to App Engine

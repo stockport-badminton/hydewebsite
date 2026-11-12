@@ -1,0 +1,65 @@
+<%- include('header.ejs') %>
+<%- include('nav.ejs') %>
+<%- include('partials/page-header.ejs') %>
+
+<%# Opt-in panel for push notifications. Client logic: static/js/push-panel.js. Server: routes/push.js. %>
+<main class="container py-4">
+  <section id="push-panel" class="prose push-panel" data-vapid-key="<%= vapidPublicKey %>" aria-live="polite">
+    <p>Get a notification on your phone when a Hyde result comes in, and a reminder the evening before (6pm) and on the day (5pm) of each match.</p>
+
+    <%# Exactly one [data-state] block is shown at a time. %>
+    <div data-state="loading"><p class="text-muted">Checking notification settings…</p></div>
+
+    <div data-state="unsupported" hidden>
+      <p>This browser doesn't support notifications.</p>
+    </div>
+
+    <div data-state="ios-install" hidden>
+      <p>On iPhone and iPad, add this site to your Home Screen first: tap <strong>Share</strong> → <strong>Add to Home Screen</strong>, then open it from there and come back to this page.</p>
+    </div>
+
+    <div data-state="dev" hidden>
+      <p>Notifications only work on the live site (the service worker isn't registered in local dev — set <code>ENABLE_SW=1</code> to try it).</p>
+    </div>
+
+    <div data-state="denied" hidden>
+      <p>Notifications are blocked for this site. To turn them on, allow notifications in your browser or phone settings, then reload.</p>
+    </div>
+
+    <div data-state="ready" hidden>
+      <p data-role="intro" class="fw-semibold"></p>
+      <div class="row g-4 mb-3">
+        <% if (topics.length) { %>
+        <fieldset class="col-sm-6">
+          <legend class="h6">Teams</legend>
+          <% topics.forEach(function (t) { %>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="push-team" id="team-<%= t.key %>" value="<%= t.key %>" <%= !preselect || preselect === t.team ? 'checked' : '' %>>
+            <label class="form-check-label" for="team-<%= t.key %>"><%= t.label %></label>
+          </div>
+          <% }) %>
+        </fieldset>
+        <% } %>
+        <fieldset class="col-sm-6">
+          <legend class="h6">Notify me about</legend>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="push-type" id="type-results" value="results" checked>
+            <label class="form-check-label" for="type-results">Results</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="push-type" id="type-reminders" value="reminders" checked>
+            <label class="form-check-label" for="type-reminders">Match reminders</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-primary" data-action="subscribe"></button>
+        <button type="button" class="btn btn-outline-secondary" data-action="unsubscribe" hidden>Turn off</button>
+      </div>
+      <p data-role="status" class="mt-3 mb-0"></p>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="/static/js/push-panel.js"></script>
+<%- include('footer.ejs') %>

@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "id": "manchester-2025-09-03T18:00:00.000Z-Hyde-1-Medlock-1",
-      "league": "Manchester",
-      "date": "2025-09-03T18:00:00.000Z",
-      "season": "20252026",
-      "team": "Hyde 1",
-      "opposition": "Medlock 1",
-      "homeOrAway": "home",
-      "competition": "Div3",
-      "status": "complete",
-      "homeScore": 11,
-      "awayScore": 7,
-      "result": "11 - 7"
-    },
-    {
       "id": "manchester-2025-09-03T19:00:00.000Z-Hyde-1-Medlock-1",
       "league": "Manchester",
       "date": "2025-09-03T19:00:00.000Z",

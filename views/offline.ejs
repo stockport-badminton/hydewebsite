@@ -1,0 +1,13 @@
+<%- include('header.ejs') %>
+<%- include('nav.ejs') %>
+<%- include('partials/page-header.ejs') %>
+
+<%# Fallback the service worker (static/sw.js) shows when a page isn't cached and there's no network. %>
+<main class="container py-4">
+  <div class="prose text-center">
+    <p>This page hasn't been saved on your device yet. Pages you've visited before, like fixtures and league tables, are still available.</p>
+    <button type="button" class="btn btn-primary" onclick="location.reload()">Try again</button>
+  </div>
+</main>
+
+<%- include('footer.ejs') %>

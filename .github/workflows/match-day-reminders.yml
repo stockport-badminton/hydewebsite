@@ -1,0 +1,80 @@
+name: Match Reminders
+
+# Two push reminders per Hyde fixture (neither league gives a usable start
+# time; matches are evenings):
+#   18:00 UK the evening before → "Tomorrow: …"
+#   17:00 UK on match day        → "Tonight: …"
+#
+# Cron is UTC, so it fires at 16:07, 17:07 and 18:07 UTC and each run works out
+# which UK hour it was *scheduled* for (GMT or BST); only the 17:00/18:00 UK
+# slots send. Using the scheduled time, not the clock, means a run GitHub
+# starts late can't land in the next slot and send twice. :07 avoids the
+# top-of-hour queue. Uses data/fixtures.json on main. Ported from the
+# remnants-badminton site.
+on:
+  schedule:
+    # Separate entries (not '7 16-18'), so github.event.schedule names the hour.
+    - cron: '7 16 * * *'
+    - cron: '7 17 * * *'
+    - cron: '7 18 * * *'
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'Which reminder to send'
+        type: choice
+        options: [tonight, tomorrow]
+        default: tonight
+      date:
+        description: 'Pretend it is this date (YYYY-MM-DD). Leave blank for today.'
+        required: false
+      dry_run:
+        description: 'Only print what would be sent'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pick reminder for this slot
+        id: slot
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          KIND: ${{ inputs.kind }}
+        run: |
+          if [ -z "$SCHEDULE" ]; then echo "kind=$KIND" >> "$GITHUB_OUTPUT"; exit 0; fi
+          read -r min hour _ <<< "$SCHEDULE"
+          uk=$(TZ=Europe/London date -d "$(date -u +%F) $hour:$min UTC" +%H)
+          case "$uk" in
+            17) echo "kind=tonight" >> "$GITHUB_OUTPUT" ;;
+            18) echo "kind=tomorrow" >> "$GITHUB_OUTPUT" ;;
+            *)  echo "Scheduled slot is ${uk}:${min} UK — nothing to send." ;;
+          esac
+
+      - name: Checkout
+        if: steps.slot.outputs.kind
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        if: steps.slot.outputs.kind
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No npm ci: the reminder path only uses Node built-ins and lib/*.js.
+      - name: Send reminders
+        if: steps.slot.outputs.kind
+        env:
+          PUSH_SEND_SECRET: ${{ secrets.PUSH_SEND_SECRET }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          KIND: ${{ steps.slot.outputs.kind }}
+          DATE: ${{ inputs.date }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          args=(--reminders "$KIND")
+          [ -n "$DATE" ] && args+=(--date "$DATE")
+          [ "$DRY_RUN" = "true" ] && args+=(--dry-run)
+          node scripts/push-notify.mjs "${args[@]}"
