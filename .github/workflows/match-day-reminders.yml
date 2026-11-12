@@ -20,10 +20,14 @@ on:
   workflow_dispatch:
     inputs:
       kind:
-        description: 'Which reminder to send'
+        description: 'Which reminder to send ("test" sends the message below to every subscriber)'
         type: choice
-        options: [tonight, tomorrow]
+        options: [tonight, tomorrow, test]
         default: tonight
+      message:
+        description: 'Test notification text (only used when kind is "test")'
+        required: false
+        default: 'Test notification from Hyde Badminton Club'
       date:
         description: 'Pretend it is this date (YYYY-MM-DD). Leave blank for today.'
         required: false
@@ -73,8 +77,13 @@ jobs:
           KIND: ${{ steps.slot.outputs.kind }}
           DATE: ${{ inputs.date }}
           DRY_RUN: ${{ inputs.dry_run }}
+          MESSAGE: ${{ inputs.message }}
         run: |
-          args=(--reminders "$KIND")
-          [ -n "$DATE" ] && args+=(--date "$DATE")
+          if [ "$KIND" = "test" ]; then
+            args=(--test "${MESSAGE:-Test notification from Hyde Badminton Club}")
+          else
+            args=(--reminders "$KIND")
+            [ -n "$DATE" ] && args+=(--date "$DATE")
+          fi
           [ "$DRY_RUN" = "true" ] && args+=(--dry-run)
           node scripts/push-notify.mjs "${args[@]}"
