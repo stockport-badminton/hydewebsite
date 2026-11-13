@@ -331,6 +331,16 @@
           ]
         },
         {
+          "isHyde": true,
+          "values": [
+            "Hyde A",
+            "3",
+            "30",
+            "24",
+            "10"
+          ]
+        },
+        {
           "isHyde": false,
           "values": [
             "Syddal Park A",
@@ -363,21 +373,11 @@
         {
           "isHyde": true,
           "values": [
-            "Hyde A",
-            "2",
-            "19",
-            "17",
-            "9.5"
-          ]
-        },
-        {
-          "isHyde": true,
-          "values": [
             "Hyde B",
-            "6",
-            "15",
-            "93",
-            "2.5"
+            "7",
+            "22",
+            "104",
+            "3.1"
           ]
         }
       ]
@@ -420,6 +420,16 @@
         {
           "isHyde": false,
           "values": [
+            "Medlock A",
+            "6",
+            "62",
+            "46",
+            "10.3"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Manor A",
             "4",
             "59",
@@ -440,31 +450,21 @@
         {
           "isHyde": false,
           "values": [
-            "Medlock A",
-            "5",
+            "College Green B",
+            "4",
             "44",
-            "46",
-            "8.8"
+            "28",
+            "11"
           ]
         },
         {
           "isHyde": false,
           "values": [
             "Disley A",
-            "6",
-            "31",
-            "77",
-            "5.2"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "College Green B",
-            "3",
-            "30",
-            "24",
-            "10"
+            "7",
+            "35",
+            "91",
+            "5"
           ]
         },
         {
@@ -481,14 +481,14 @@
           "isHyde": false,
           "values": [
             "Mellor B",
-            "5",
+            "6",
             "16",
-            "74",
-            "3.2"
+            "92",
+            "2.7"
           ]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-11-12T13:27:38.447Z"
+  "lastUpdated": "2026-11-13T12:43:19.902Z"
 }

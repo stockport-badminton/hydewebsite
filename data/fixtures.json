@@ -709,10 +709,10 @@
       "opposition": "Hyde A",
       "homeOrAway": "home",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 7,
+      "awayScore": 11,
+      "result": "7 - 11"
     },
     {
       "id": "tameside-6084",
@@ -1485,5 +1485,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-11-12T13:27:37.214Z"
+  "lastUpdated": "2026-11-13T12:43:18.820Z"
 }
