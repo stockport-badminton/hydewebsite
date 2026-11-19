@@ -343,7 +343,7 @@
         {
           "isHyde": false,
           "values": [
-            "Syddal Park A",
+            "GHAP B",
             "5",
             "30",
             "60",
@@ -353,7 +353,7 @@
         {
           "isHyde": false,
           "values": [
-            "GHAP B",
+            "Syddal Park A",
             "5",
             "30",
             "60",
@@ -400,6 +400,16 @@
         {
           "isHyde": false,
           "values": [
+            "Alderley Park TS",
+            "6",
+            "72",
+            "36",
+            "12"
+          ]
+        },
+        {
+          "isHyde": false,
+          "values": [
             "Mellor A",
             "6",
             "68",
@@ -410,11 +420,11 @@
         {
           "isHyde": false,
           "values": [
-            "Alderley Park TS",
-            "5",
-            "65",
-            "25",
-            "13"
+            "Aerospace B",
+            "6",
+            "66",
+            "42",
+            "11"
           ]
         },
         {
@@ -435,16 +445,6 @@
             "59",
             "13",
             "14.8"
-          ]
-        },
-        {
-          "isHyde": false,
-          "values": [
-            "Aerospace B",
-            "5",
-            "55",
-            "35",
-            "11"
           ]
         },
         {
@@ -490,5 +490,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-11-18T13:34:19.740Z"
+  "lastUpdated": "2026-11-19T14:01:15.698Z"
 }
