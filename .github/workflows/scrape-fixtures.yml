@@ -48,12 +48,5 @@ jobs:
       - name: Push
         run: git diff HEAD~1 HEAD --quiet 2>/dev/null && echo "Nothing to push." || git push
 
-      # Diffs data/fixtures.json HEAD~1 → HEAD (the commit just made) and pushes
-      # any new results to subscribers via the live site's /push/send route.
-      # Never fails the job; problems show up as a workflow warning.
-      - name: Notify new results
-        if: steps.commit.outputs.committed == 'true'
-        env:
-          PUSH_SEND_SECRET: ${{ secrets.PUSH_SEND_SECRET }}
-          SITE_URL: ${{ vars.SITE_URL }}
-        run: node scripts/push-notify.mjs
+      # Result notifications are sent by App Engine cron (cron.yaml → /push/cron/results),
+      # which reads the data/fixtures.json pushed here and announces anything new.

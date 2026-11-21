@@ -37,5 +37,6 @@ jobs:
           PUSH_SEND_SECRET=${{ secrets.PUSH_SEND_SECRET }}
           EOF
 
+      # cron.yaml schedules the push reminders/results (routes/push.js).
       - name: Deploy to App Engine
-        run: gcloud app deploy --quiet
+        run: gcloud app deploy app.yaml cron.yaml --quiet

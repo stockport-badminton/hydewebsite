@@ -8,7 +8,9 @@
 //   GET    /notifications         opt-in page (pick teams + results/reminders)
 //   POST   /push/subscribe        { subscription, teams, types } → save / update
 //   DELETE /push/subscribe        { endpoint }                   → remove
-//   POST   /push/send             Bearer PUSH_SEND_SECRET; { notifications: [...] } (called by scripts/push-notify.mjs)
+//   POST   /push/send             Bearer PUSH_SEND_SECRET; { notifications: [...] } (manual sends via scripts/push-notify.mjs)
+//   GET    /push/cron/reminders?when=tonight|tomorrow   App Engine cron (cron.yaml) or Bearer PUSH_SEND_SECRET
+//   GET    /push/cron/results                           ditto — see lib/push/scheduled.js
 const express = require('express');
 const path = require('path');
 const { timingSafeEqual } = require('node:crypto');
@@ -19,6 +21,8 @@ const {
 } = require('../lib/push/subscription');
 const { createDatastoreStore } = require('../lib/push/store-datastore');
 const { sendNotifications } = require('../lib/push/send');
+const { REMINDER_KINDS } = require('../lib/push/reminders');
+const { runReminders, runResults } = require('../lib/push/scheduled');
 const push = require('../lib/push/config');
 
 const router = express.Router();
@@ -130,6 +134,37 @@ router.post('/push/send', express.json({ limit: '64kb' }), async (req, res) => {
     res.status(500).json({ error: 'send failed' });
   }
 });
+
+// Scheduled sends. App Engine strips X-Appengine-* headers from outside
+// requests, so X-Appengine-Cron: true can only come from cron.yaml; the Bearer
+// secret allows a manual run (e.g. curl) of the same code path.
+router.get('/push/cron/reminders', cronOnly, async (req, res) => {
+  const when = req.query.when;
+  if (!REMINDER_KINDS.includes(when)) return res.status(400).json({ error: `when must be one of ${REMINDER_KINDS.join(', ')}` });
+  await runCron(res, 'push-reminders', () => runReminders(store, when));
+});
+
+router.get('/push/cron/results', cronOnly, async (req, res) => {
+  await runCron(res, 'push-results', () => runResults(store));
+});
+
+function cronOnly(req, res, next) {
+  if (req.get('x-appengine-cron') === 'true' || authorised(req)) return next();
+  res.status(403).json({ error: 'forbidden' });
+}
+
+async function runCron(res, label, job) {
+  res.set('Cache-Control', 'no-store');
+  try {
+    const summary = await job();
+    console.log(label, JSON.stringify(summary));
+    res.json(summary);
+  } catch (err) {
+    // A non-2xx shows as a failed run in the Cloud Scheduler console.
+    console.error(`${label} failed`, err);
+    res.status(500).json({ error: err.message });
+  }
+}
 
 // Browsers always send Origin on fetch POST/DELETE; reject other sites' pages.
 // Compared by host since App Engine terminates TLS (req.protocol is 'http').

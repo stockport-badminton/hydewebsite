@@ -3,8 +3,11 @@
  * Sends push notifications via the site's /push/send route (routes/push.js).
  * Ported from the remnants-badminton site.
  *
- * Results (run by the daily scrape workflow after it commits): diffs
- * data/fixtures.json between two git revisions and notifies new results.
+ * Manual sends and dry runs only; scheduled sends run from App Engine cron
+ * (cron.yaml → /push/cron/*, lib/push/scheduled.js).
+ *
+ * Results: diffs data/fixtures.json between two git revisions and notifies new
+ * results (e.g. to back-fill one the scheduled job skipped).
  *   node scripts/push-notify.mjs                 # compare HEAD~1 → HEAD and send
  *   node scripts/push-notify.mjs --base <ref>    # compare <ref> → HEAD
  *

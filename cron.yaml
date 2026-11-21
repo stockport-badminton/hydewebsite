@@ -1,0 +1,21 @@
+# App Engine cron → push notification routes in routes/push.js (logic in
+# lib/push/scheduled.js). Replaces GitHub Actions schedules, which were running
+# 4–8 hours late. Times are UK local (GMT/BST handled by `timezone`).
+# Deployed alongside app.yaml by .github/workflows/deploy.yml.
+cron:
+  - description: 'Match reminders: "Tonight" for today''s Hyde fixtures'
+    url: /push/cron/reminders?when=tonight
+    schedule: every day 17:00
+    timezone: Europe/London
+
+  - description: 'Match reminders: "Tomorrow" for tomorrow''s Hyde fixtures'
+    url: /push/cron/reminders?when=tomorrow
+    schedule: every day 18:00
+    timezone: Europe/London
+
+  # Several runs a day: the scrape that adds results is still on GitHub cron and
+  # lands at an unpredictable hour. Each run only announces results not sent before.
+  - description: 'New results'
+    url: /push/cron/results
+    schedule: every 3 hours from 09:00 to 21:00
+    timezone: Europe/London
