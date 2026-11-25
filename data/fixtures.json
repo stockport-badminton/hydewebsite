@@ -723,10 +723,10 @@
       "opposition": "Mellor A",
       "homeOrAway": "home",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 10,
+      "awayScore": 8,
+      "result": "10 - 8"
     },
     {
       "id": "tameside-6085",
@@ -737,10 +737,10 @@
       "opposition": "Manchester Edgeley A",
       "homeOrAway": "away",
       "competition": "Tameside",
-      "status": "outstanding",
-      "homeScore": null,
-      "awayScore": null,
-      "result": ""
+      "status": "complete",
+      "homeScore": 17,
+      "awayScore": 1,
+      "result": "17 - 1"
     },
     {
       "id": "manchester-2026-11-23T19:00:00.000Z-Blue-Triangle-1-Hyde-2",
@@ -1485,5 +1485,5 @@
       "result": ""
     }
   ],
-  "lastUpdated": "2026-11-24T15:25:47.091Z"
+  "lastUpdated": "2026-11-25T15:10:22.208Z"
 }
